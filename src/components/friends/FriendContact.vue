@@ -2,6 +2,7 @@
   <li>
     <h2>{{ name }} {{ isFavourite ? '(Favourite)' : '' }}</h2>
     <button @click="toggleFavourite">Toggle Favourite</button>
+    <button @click="$emit('delete-contact', id)">Delete</button>
     <button @click="toggleDetails">{{ isDetailsVisible ? 'Hide' : 'Show' }} Details</button>
     <div v-if="isDetailsVisible">
       <p><strong>Phone:</strong> {{ phoneNumber }}</p>
@@ -35,17 +36,17 @@ export default {
       default: false,
     },
   },
-  // emits: ['toggle-favourite'],
-  emits: {
-    'toggle-favourite': id => {
-      if (id) {
-        return true;
-      } else {
-        console.warn('id is missing');
-        return false;
-      }
-    },
-  },
+  emits: ['toggle-favourite', 'delete-contact'],
+  // emits: {
+  //   'toggle-favourite': id => {
+  //     if (id) {
+  //       return true;
+  //     } else {
+  //       console.warn('id is missing');
+  //       return false;
+  //     }
+  //   },
+  // },
   data() {
     return {
       isDetailsVisible: false,
