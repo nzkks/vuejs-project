@@ -1,8 +1,11 @@
 <template>
   <li>
     <h2>{{ name }} {{ isFavourite ? '(Favourite)' : '' }}</h2>
-    <p><strong>Phone:</strong> {{ phoneNumber }}</p>
-    <p><strong>Email:</strong> {{ emailAddress }}</p>
+    <button @click="toggleDetails">{{ isDetailsVisible ? 'Hide' : 'Show' }} Details</button>
+    <div v-if="isDetailsVisible">
+      <p><strong>Phone:</strong> {{ phoneNumber }}</p>
+      <p><strong>Email:</strong> {{ emailAddress }}</p>
+    </div>
   </li>
 </template>
 
@@ -32,8 +35,14 @@ export default {
     },
   },
   data() {
-    return {};
+    return {
+      isDetailsVisible: false,
+    };
   },
-  methods: {},
+  methods: {
+    toggleDetails() {
+      this.isDetailsVisible = !this.isDetailsVisible;
+    },
+  },
 };
 </script>
