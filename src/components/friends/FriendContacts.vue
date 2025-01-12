@@ -1,6 +1,10 @@
 <template>
   <section>
     <header><h1>My friends</h1></header>
+    <div>
+      <create-friend-contact @add-friend="addFriend" />
+    </div>
+
     <ul>
       <friend-contact
         v-for="friend in friends"
@@ -40,6 +44,16 @@ export default {
     };
   },
   methods: {
+    addFriend(name, phone, email, isFavourite) {
+      const newFriend = {
+        id: new Date().toISOString(),
+        name,
+        phone,
+        email,
+        isFavourite,
+      };
+      this.friends.push(newFriend);
+    },
     toggleFavouriteStatus(friendId) {
       const identifiedFriend = this.friends.find(friend => friend.id === friendId);
       identifiedFriend.isFavourite = !identifiedFriend.isFavourite;
