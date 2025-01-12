@@ -35,7 +35,17 @@ export default {
       default: false,
     },
   },
-  emits: ['toggle-favourite'],
+  // emits: ['toggle-favourite'],
+  emits: {
+    'toggle-favourite': id => {
+      if (id) {
+        return true;
+      } else {
+        console.warn('id is missing');
+        return false;
+      }
+    },
+  },
   data() {
     return {
       isDetailsVisible: false,
