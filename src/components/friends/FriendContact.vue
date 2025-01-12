@@ -1,6 +1,7 @@
 <template>
   <li>
     <h2>{{ name }} {{ isFavourite ? '(Favourite)' : '' }}</h2>
+    <button @click="toggleFavourite">Toggle Favourite</button>
     <button @click="toggleDetails">{{ isDetailsVisible ? 'Hide' : 'Show' }} Details</button>
     <div v-if="isDetailsVisible">
       <p><strong>Phone:</strong> {{ phoneNumber }}</p>
@@ -34,6 +35,7 @@ export default {
       default: false,
     },
   },
+  emits: ['toggle-favourite'],
   data() {
     return {
       isDetailsVisible: false,
@@ -42,6 +44,9 @@ export default {
   methods: {
     toggleDetails() {
       this.isDetailsVisible = !this.isDetailsVisible;
+    },
+    toggleFavourite() {
+      this.$emit('toggle-favourite', this.id);
     },
   },
 };
