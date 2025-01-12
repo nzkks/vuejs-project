@@ -1,4 +1,6 @@
-<template><div>Vue js application</div></template>
+<template>
+  <friend-contacts />
+</template>
 
 <script>
 export default {
