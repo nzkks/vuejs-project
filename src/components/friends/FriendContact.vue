@@ -8,7 +8,24 @@
 
 <script>
 export default {
-  props: ['name', 'phoneNumber', 'emailAddress', 'isFavourite'],
+  props: {
+    name: {
+      type: String,
+      required: true,
+    },
+    phoneNumber: {
+      type: String,
+      required: true,
+    },
+    emailAddress: {
+      type: String,
+      required: true,
+    },
+    isFavourite: {
+      type: String,
+      required: false,
+    },
+  },
   data() {
     return {};
   },
