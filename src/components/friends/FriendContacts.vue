@@ -2,16 +2,18 @@
   <section>
     <header><h1>My friends</h1></header>
     <ul>
-      <li>
-        <h2>Jake Smith</h2>
-        <p><strong>Phone:</strong> 01234 5678 991</p>
-        <p><strong>Email:</strong> tLZbE@example.com</p>
-      </li>
-      <li>
-        <h2>Jane Doe (Favourite)</h2>
-        <p><strong>Phone:</strong> 01234 5678 992</p>
-        <p><strong>Email:</strong> QvWZ0@example.com</p>
-      </li>
+      <friend-contact
+        name="Jake Smith"
+        phone-number="01234 5678 991"
+        email-address="tLZbE@example.com"
+        is-favourite="0"
+      />
+      <friend-contact
+        name="Jane Doe"
+        phone-number="01234 5678 992"
+        email-address="QvWZ0@example.com"
+        is-favourite="1"
+      />
     </ul>
   </section>
 </template>
