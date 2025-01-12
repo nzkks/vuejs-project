@@ -6,13 +6,13 @@
         name="Jake Smith"
         phone-number="01234 5678 991"
         email-address="tLZbE@example.com"
-        is-favourite="0"
+        :is-favourite="false"
       />
       <friend-contact
         name="Jane Doe"
         phone-number="01234 5678 992"
         email-address="QvWZ0@example.com"
-        is-favourite="1"
+        :is-favourite="true"
       />
     </ul>
   </section>

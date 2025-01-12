@@ -1,6 +1,6 @@
 <template>
   <li>
-    <h2>{{ name }} {{ isFavourite === '1' ? '(Favourite)' : '' }}</h2>
+    <h2>{{ name }} {{ isFavourite ? '(Favourite)' : '' }}</h2>
     <p><strong>Phone:</strong> {{ phoneNumber }}</p>
     <p><strong>Email:</strong> {{ emailAddress }}</p>
   </li>
@@ -22,7 +22,7 @@ export default {
       required: true,
     },
     isFavourite: {
-      type: String,
+      type: Boolean,
       required: false,
     },
   },
