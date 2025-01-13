@@ -1,5 +1,6 @@
 <template>
-  <friend-contacts />
+  <!-- <friend-contacts /> -->
+  <users-wrapper />
 </template>
 
 <script>
