@@ -1,7 +1,8 @@
 <template>
   <!-- <friend-contacts /> -->
   <!-- <users-wrapper /> -->
-  <knowledge-topics></knowledge-topics>
+  <!-- <knowledge-topics /> -->
+  <user-badges />
 </template>
 
 <script>

@@ -9,11 +9,17 @@ import App from './App.vue';
 // import UserData from './components/users/UserData.vue';
 // import ActiveUser from './components/users/ActiveUser.vue';
 
-import KnowledgeTopics from './components/topics/KnowledgeTopics.vue';
-import ActiveElement from './components/topics/ActiveElement.vue';
-import KnowledgeBase from './components/topics/KnowledgeBase.vue';
-import KnowledgeElement from './components/topics/KnowledgeElement.vue';
-import KnowledgeGrid from './components/topics/KnowledgeGrid.vue';
+// import KnowledgeTopics from './components/topics/KnowledgeTopics.vue';
+// import ActiveElement from './components/topics/ActiveElement.vue';
+// import KnowledgeBase from './components/topics/KnowledgeBase.vue';
+// import KnowledgeElement from './components/topics/KnowledgeElement.vue';
+// import KnowledgeGrid from './components/topics/KnowledgeGrid.vue';
+
+import UserBadges from './components/userBadges/UserBadges.vue';
+import TheHeader from './components/userBadges/TheHeader.vue';
+import BaseBadge from './components/userBadges/BaseBadge.vue';
+import BadgeList from './components/userBadges/BadgeList.vue';
+import UserInfo from './components/userBadges/UserInfo.vue';
 
 const app = createApp(App);
 
@@ -25,9 +31,16 @@ const app = createApp(App);
 // app.component('friend-contact', FriendContact);
 // app.component('create-friend-contact', CreateFriendContact);
 
-app.component('knowledge-topics', KnowledgeTopics);
-app.component('active-element', ActiveElement);
-app.component('knowledge-base', KnowledgeBase);
-app.component('knowledge-element', KnowledgeElement);
-app.component('knowledge-grid', KnowledgeGrid);
+// app.component('knowledge-topics', KnowledgeTopics);
+// app.component('active-element', ActiveElement);
+// app.component('knowledge-base', KnowledgeBase);
+// app.component('knowledge-element', KnowledgeElement);
+// app.component('knowledge-grid', KnowledgeGrid);
+
+app.component('user-badges', UserBadges);
+app.component('the-header', TheHeader);
+app.component('base-badge', BaseBadge);
+app.component('badge-list', BadgeList);
+app.component('user-info', UserInfo);
+
 app.mount('#app');
