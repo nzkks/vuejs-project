@@ -65,8 +65,8 @@ header {
 #app button {
   font: inherit;
   cursor: pointer;
-  border: 1px solid #ff0077;
-  background-color: #ff0077;
+  border: 1px solid #00259e;
+  background-color: #044895;
   color: white;
   padding: 0.05rem 1rem;
   margin: 0.25rem;
@@ -75,8 +75,8 @@ header {
 
 #app button:hover,
 #app button:active {
-  background-color: #ec3169;
-  border-color: #ec3169;
+  background-color: #0552ab;
+  border-color: #00259e;
   box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.26);
 }
 
