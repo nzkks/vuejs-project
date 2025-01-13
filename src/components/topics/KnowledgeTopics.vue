@@ -1,7 +1,7 @@
 <template>
   <div style="display: flex; gap: 2rem; margin: 0 auto; width: 100%; max-width: 40rem">
     <div style="flex: 1">
-      <knowledge-base @select-topic="activateTopic"></knowledge-base>
+      <knowledge-base></knowledge-base>
     </div>
 
     <div style="flex: 1">
@@ -39,6 +39,7 @@ export default {
   provide() {
     return {
       topics: this.topics,
+      selectTopic: this.activateTopic,
     };
   },
   methods: {
