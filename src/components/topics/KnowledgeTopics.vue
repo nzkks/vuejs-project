@@ -1,14 +1,11 @@
 <template>
   <div style="display: flex; gap: 2rem; margin: 0 auto; width: 100%; max-width: 40rem">
     <div style="flex: 1">
-      <knowledge-base></knowledge-base>
+      <knowledge-base />
     </div>
 
     <div style="flex: 1">
-      <active-element
-        :topic-title="activeTopic && activeTopic.title"
-        :text="activeTopic && activeTopic.fullText"
-      ></active-element>
+      <active-element :topic-title="activeTopic && activeTopic.title" :text="activeTopic && activeTopic.fullText" />
     </div>
   </div>
 </template>

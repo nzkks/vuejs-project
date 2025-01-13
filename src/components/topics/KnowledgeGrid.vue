@@ -6,7 +6,7 @@
       :id="topic.id"
       :topic-name="topic.title"
       :description="topic.description"
-    ></knowledge-element>
+    />
   </ul>
 </template>
 
