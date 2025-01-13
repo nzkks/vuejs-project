@@ -1,6 +1,7 @@
 <template>
   <!-- <friend-contacts /> -->
-  <users-wrapper />
+  <!-- <users-wrapper /> -->
+  <knowledge-topics></knowledge-topics>
 </template>
 
 <script>
