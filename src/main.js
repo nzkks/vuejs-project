@@ -15,10 +15,7 @@ import App from './App.vue';
 // import KnowledgeElement from './components/topics/KnowledgeElement.vue';
 // import KnowledgeGrid from './components/topics/KnowledgeGrid.vue';
 
-import UserBadges from './components/userBadges/UserBadges.vue';
 import BaseBadge from './components/userBadges/BaseBadge.vue';
-import BadgeList from './components/userBadges/BadgeList.vue';
-import UserInfo from './components/userBadges/UserInfo.vue';
 
 const app = createApp(App);
 
@@ -36,10 +33,6 @@ const app = createApp(App);
 // app.component('knowledge-element', KnowledgeElement);
 // app.component('knowledge-grid', KnowledgeGrid);
 
-app.component('user-badges', UserBadges);
-
-app.component('base-badge', BaseBadge);
-app.component('badge-list', BadgeList);
-app.component('user-info', UserInfo);
+app.component('BaseBadge', BaseBadge);
 
 app.mount('#app');

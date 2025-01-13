@@ -2,11 +2,14 @@
   <!-- <friend-contacts /> -->
   <!-- <users-wrapper /> -->
   <!-- <knowledge-topics /> -->
-  <user-badges />
+  <UserBadges />
 </template>
 
 <script>
+import UserBadges from './components/userBadges/UserBadges.vue';
+
 export default {
+  components: { UserBadges },
   data() {
     return {};
   },

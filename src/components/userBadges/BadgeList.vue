@@ -3,10 +3,10 @@
     <h2>Available Badges</h2>
     <ul>
       <li>
-        <base-badge type="admin" caption="ADMIN" />
+        <BaseBadge type="admin" caption="ADMIN" />
       </li>
       <li>
-        <base-badge type="author" caption="AUTHOR" />
+        <BaseBadge type="author" caption="AUTHOR" />
       </li>
     </ul>
   </section>
