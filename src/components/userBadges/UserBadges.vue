@@ -7,7 +7,10 @@
 </template>
 
 <script>
+import TheHeader from './TheHeader.vue';
+
 export default {
+  components: { 'the-header': TheHeader },
   data() {
     return {
       activeUser: {

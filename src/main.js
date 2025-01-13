@@ -16,7 +16,6 @@ import App from './App.vue';
 // import KnowledgeGrid from './components/topics/KnowledgeGrid.vue';
 
 import UserBadges from './components/userBadges/UserBadges.vue';
-import TheHeader from './components/userBadges/TheHeader.vue';
 import BaseBadge from './components/userBadges/BaseBadge.vue';
 import BadgeList from './components/userBadges/BadgeList.vue';
 import UserInfo from './components/userBadges/UserInfo.vue';
@@ -38,7 +37,7 @@ const app = createApp(App);
 // app.component('knowledge-grid', KnowledgeGrid);
 
 app.component('user-badges', UserBadges);
-app.component('the-header', TheHeader);
+
 app.component('base-badge', BaseBadge);
 app.component('badge-list', BadgeList);
 app.component('user-info', UserInfo);
