@@ -46,5 +46,16 @@ export default {
       this.activeTopic = this.topics.find(topic => topic.id === topicId);
     },
   },
+  mounted() {
+    setTimeout(() => {
+      this.topics.push({
+        id: 'events',
+        title: 'Events',
+        description: 'Events are a powerful feature of Vue',
+        fullText:
+          'Events allow you to trigger actions when certain things happen in your UI, such as buttons being clicked or input fields being filled out.',
+      });
+    }, 3000);
+  },
 };
 </script>
