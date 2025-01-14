@@ -5,13 +5,14 @@
         <h2>Available Badges</h2>
       </template>
 
-      <ul>
-        <li>
-          <BaseBadge type="admin" caption="ADMIN" />
-        </li>
-        <li>
-          <BaseBadge type="author" caption="AUTHOR" />
-        </li></ul
+      <template v-slot:default>
+        <ul>
+          <li>
+            <BaseBadge type="admin" caption="ADMIN" />
+          </li>
+          <li>
+            <BaseBadge type="author" caption="AUTHOR" />
+          </li></ul></template
     ></BaseCard>
   </section>
 </template>

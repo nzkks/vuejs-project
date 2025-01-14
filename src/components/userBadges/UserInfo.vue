@@ -6,7 +6,9 @@
         <BaseBadge :type="role" :caption="role.toUpperCase()" />
       </template>
 
-      <p>{{ infoText }}</p>
+      <template v-slot:default>
+        <p>{{ infoText }}</p>
+      </template>
     </BaseCard>
   </section>
 </template>
