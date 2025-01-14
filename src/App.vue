@@ -31,7 +31,7 @@ body {
   margin: 0;
 }
 
-header {
+/* header {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
   margin: 3rem auto;
   border-radius: 10px;
@@ -96,5 +96,5 @@ header {
 }
 #app form div {
   margin: 1rem 0;
-}
+} */
 </style>
