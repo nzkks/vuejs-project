@@ -1,7 +1,10 @@
 <template>
   <section>
     <BaseCard>
-      <h2>Available Badges</h2>
+      <template v-slot:header>
+        <h2>Available Badges</h2>
+      </template>
+
       <ul>
         <li>
           <BaseBadge type="admin" caption="ADMIN" />
