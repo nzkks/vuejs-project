@@ -1,6 +1,8 @@
 <template>
   <ul>
-    <li v-for="goal in goals" :key="goal">{{ goal }}</li>
+    <li v-for="goal in goals" :key="goal">
+      <slot :item="goal" anotherProp="..." additionalProp="......"></slot>
+    </li>
   </ul>
 </template>
 
