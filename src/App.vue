@@ -2,14 +2,20 @@
   <!-- <friend-contacts /> -->
   <!-- <users-wrapper /> -->
   <!-- <knowledge-topics /> -->
-  <UserBadges />
+  <!-- <UserBadges /> -->
+  <DynamicComponents />
 </template>
 
 <script>
-import UserBadges from './components/userBadges/UserBadges.vue';
+import DynamicComponents from './components/dynamicComponents/DynamicComponents.vue';
+
+// import UserBadges from './components/userBadges/UserBadges.vue';
 
 export default {
-  components: { UserBadges },
+  components: {
+    // UserBadges
+    DynamicComponents,
+  },
   data() {
     return {};
   },
