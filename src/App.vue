@@ -2,22 +2,22 @@
   <!-- <friend-contacts /> -->
   <!-- <users-wrapper /> -->
   <!-- <knowledge-topics /> -->
-  <!-- <UserBadges /> -->
+  <UserBadges />
   <!-- <DynamicComponents /> -->
-  <SampleForm />
+  <!-- <SampleForm /> -->
 </template>
 
 <script>
 // import DynamicComponents from './components/dynamicComponents/DynamicComponents.vue';
-import SampleForm from './components/teleport/SampleForm.vue';
+// import SampleForm from './components/teleport/SampleForm.vue';
 
-// import UserBadges from './components/userBadges/UserBadges.vue';
+import UserBadges from './components/userBadges/UserBadges.vue';
 
 export default {
   components: {
-    // UserBadges
+    UserBadges,
     // DynamicComponents,
-    SampleForm,
+    // SampleForm,
   },
   data() {
     return {};

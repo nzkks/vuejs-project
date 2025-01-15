@@ -1,6 +1,6 @@
 <template>
   <div>
-    <TheHeader />
+    <BaseHeader>More on Vue Components</BaseHeader>
     <BadgeList />
     <UserInfo :full-name="activeUser.name" :info-text="activeUser.description" :role="activeUser.role" />
     <CourseGoals #default="slotProps">
@@ -12,13 +12,13 @@
 </template>
 
 <script>
-import TheHeader from '../layout/TheHeader.vue';
+import BaseHeader from '../layout/BaseHeader.vue';
 import UserInfo from './UserInfo.vue';
 import BadgeList from './BadgeList.vue';
 import CourseGoals from './CourseGoals.vue';
 
 export default {
-  components: { BadgeList, CourseGoals, TheHeader, UserInfo },
+  components: { BadgeList, CourseGoals, BaseHeader, UserInfo },
   data() {
     return {
       activeUser: {
