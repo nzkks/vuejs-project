@@ -3,18 +3,21 @@
   <!-- <users-wrapper /> -->
   <!-- <knowledge-topics /> -->
   <!-- <UserBadges /> -->
-  <DynamicComponents />
+  <!-- <DynamicComponents /> -->
+  <SampleForm />
 </template>
 
 <script>
-import DynamicComponents from './components/dynamicComponents/DynamicComponents.vue';
+// import DynamicComponents from './components/dynamicComponents/DynamicComponents.vue';
+import SampleForm from './components/teleport/SampleForm.vue';
 
 // import UserBadges from './components/userBadges/UserBadges.vue';
 
 export default {
   components: {
     // UserBadges
-    DynamicComponents,
+    // DynamicComponents,
+    SampleForm,
   },
   data() {
     return {};
