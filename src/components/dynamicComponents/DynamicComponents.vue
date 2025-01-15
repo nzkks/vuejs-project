@@ -5,7 +5,9 @@
   <!-- <ActiveGoals v-if="selectedComponent === 'ActiveGoals'" />
   <ManageGoals v-if="selectedComponent === 'ManageGoals'" /> -->
 
-  <component :is="selectedComponent"></component>
+  <keep-alive>
+    <component :is="selectedComponent"></component>
+  </keep-alive>
 </template>
 
 <script>
