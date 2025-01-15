@@ -3,12 +3,10 @@
     <TheHeader />
     <BadgeList />
     <UserInfo :full-name="activeUser.name" :info-text="activeUser.description" :role="activeUser.role" />
-    <CourseGoals>
-      <template #default="slotProps">
-        <h2>{{ slotProps.item }}</h2>
-        <p>{{ slotProps.anotherProp }}</p>
-        <p style="color: red">{{ slotProps['additionalProp'] }}</p>
-      </template>
+    <CourseGoals #default="slotProps">
+      <h2>{{ slotProps.item }}</h2>
+      <p>{{ slotProps.anotherProp }}</p>
+      <p style="color: red">{{ slotProps['additionalProp'] }}</p>
     </CourseGoals>
   </div>
 </template>
