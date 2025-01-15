@@ -15,7 +15,7 @@ import App from './App.vue';
 // import KnowledgeElement from './components/topics/KnowledgeElement.vue';
 // import KnowledgeGrid from './components/topics/KnowledgeGrid.vue';
 
-import BaseBadge from './components/userBadges/BaseBadge.vue';
+import BaseBadge from './components/ui/BaseBadge.vue';
 
 const app = createApp(App);
 

@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import TheHeader from './TheHeader.vue';
+import TheHeader from '../layout/TheHeader.vue';
 import UserInfo from './UserInfo.vue';
 import BadgeList from './BadgeList.vue';
 import CourseGoals from './CourseGoals.vue';
