@@ -2,8 +2,10 @@
   <button @click="setSelectedComponent('ActiveGoals')">Active</button>
   <button @click="setSelectedComponent('ManageGoals')">Manage</button>
 
-  <ActiveGoals v-if="selectedComponent === 'ActiveGoals'" />
-  <ManageGoals v-if="selectedComponent === 'ManageGoals'" />
+  <!-- <ActiveGoals v-if="selectedComponent === 'ActiveGoals'" />
+  <ManageGoals v-if="selectedComponent === 'ManageGoals'" /> -->
+
+  <component :is="selectedComponent"></component>
 </template>
 
 <script>
