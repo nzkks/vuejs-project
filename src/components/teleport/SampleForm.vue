@@ -8,20 +8,20 @@
   </div>
 
   <teleport to="body">
-    <DialogModal v-if="isInputInvalid">
+    <BaseDialogModal v-if="isInputInvalid">
       <h2>Input is invalid!</h2>
       <p>Please enter at least few characters...</p>
       <button @click="isInputInvalid = false">Close</button>
-    </DialogModal>
+    </BaseDialogModal>
   </teleport>
 </template>
 
 <script>
-import DialogModal from './DialogModal.vue';
+import BaseDialogModal from '../ui/BaseDialogModal.vue';
 
 export default {
   name: 'SampleForm',
-  components: { DialogModal },
+  components: { BaseDialogModal },
   data() {
     return {
       goal: '',
