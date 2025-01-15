@@ -7,11 +7,13 @@
     <button @click="setGoal">Add Goal</button>
   </div>
 
-  <DialogModal v-if="isInputInvalid">
-    <h2>Input is invalid!</h2>
-    <p>Please enter at least few characters...</p>
-    <button @click="isInputInvalid = false">Close</button>
-  </DialogModal>
+  <teleport to="body">
+    <DialogModal v-if="isInputInvalid">
+      <h2>Input is invalid!</h2>
+      <p>Please enter at least few characters...</p>
+      <button @click="isInputInvalid = false">Close</button>
+    </DialogModal>
+  </teleport>
 </template>
 
 <script>
