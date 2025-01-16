@@ -8,15 +8,12 @@
   </div>
 
   <teleport to="body">
-    <BaseDialogModal v-if="isInputInvalid">
-      <template #title>
-        <h2>Input is invalid!</h2>
-      </template>
-      <template #text>
+    <BaseDialogModal v-if="isInputInvalid" title="Invalid Input" @close="confirmError">
+      <template #default>
         <p>Please enter at least few characters...</p>
       </template>
       <template #actions>
-        <button @click="isInputInvalid = false">Close</button>
+        <button @click="confirmError">Close</button>
       </template>
     </BaseDialogModal>
   </teleport>
@@ -40,6 +37,9 @@ export default {
       } else {
         this.goal = enteredGoal;
       }
+    },
+    confirmError() {
+      this.isInputInvalid = false;
     },
   },
 };

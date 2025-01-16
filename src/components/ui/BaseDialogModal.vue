@@ -1,19 +1,85 @@
 <template>
-  <dialog open><slot name="title"></slot><slot name="text"></slot><slot name="actions"></slot></dialog>
+  <div @click="$emit('close')"></div>
+  <dialog open>
+    <header>
+      <slot name="header">
+        <h2>{{ title }}</h2>
+      </slot>
+    </header>
+    <section>
+      <slot></slot>
+    </section>
+    <menu>
+      <slot name="actions">
+        <base-button @click="$emit('close')">Close</base-button>
+      </slot>
+    </menu>
+  </dialog>
 </template>
 
-<style>
+<script>
+export default {
+  props: {
+    title: {
+      type: String,
+      required: false,
+    },
+  },
+  emits: ['close'],
+};
+</script>
+
+<style scoped>
 dialog {
   margin: 0;
   position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%;
-  max-width: 310px;
-  background-color: rgb(255, 186, 186);
+  top: 20vh;
+  left: 10%;
+  width: 80%;
+  z-index: 100;
   border: none;
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  padding: 0;
+  overflow: hidden;
+}
+
+div {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.75);
+  z-index: 10;
+}
+
+header {
+  background-color: #01173a;
+  color: white;
+  width: 100%;
+  padding: 1rem;
+}
+
+header h2 {
+  margin: 0;
+}
+
+section {
+  padding: 1rem;
+}
+
+menu {
+  padding: 1rem;
+  display: flex;
+  justify-content: flex-end;
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  dialog {
+    left: calc(50% - 20rem);
+    width: 40rem;
+  }
 }
 </style>
