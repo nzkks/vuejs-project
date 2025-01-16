@@ -5,11 +5,13 @@
   <!-- <UserBadges /> -->
   <!-- <DynamicComponents /> -->
   <!-- <SampleForm /> -->
-  <LearningResources />
+  <!-- <LearningResources /> -->
+  <TheForm />
 </template>
 
 <script>
-import LearningResources from './components/learningResources/LearningResources.vue';
+import TheForm from './components/advForm/TheForm.vue';
+// import LearningResources from './components/learningResources/LearningResources.vue';
 
 // import DynamicComponents from './components/dynamicComponents/DynamicComponents.vue';
 // import SampleForm from './components/teleport/SampleForm.vue';
@@ -21,7 +23,8 @@ export default {
     // UserBadges
     // DynamicComponents,
     // SampleForm,
-    LearningResources,
+    // LearningResources,
+    TheForm,
   },
   data() {
     return {};
