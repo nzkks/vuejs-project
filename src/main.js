@@ -18,6 +18,7 @@ import App from './App.vue';
 import BaseBadge from './components/ui/BaseBadge.vue';
 import BaseButton from './components/ui/BaseButton.vue';
 import BaseCard from './components/ui/BaseCard.vue';
+import BaseDialogModal from './components/ui/BaseDialogModal.vue';
 
 const app = createApp(App);
 
@@ -38,5 +39,6 @@ const app = createApp(App);
 app.component('BaseBadge', BaseBadge);
 app.component('BaseButton', BaseButton);
 app.component('BaseCard', BaseCard);
+app.component('BaseDialogModal', BaseDialogModal);
 
 app.mount('#app');

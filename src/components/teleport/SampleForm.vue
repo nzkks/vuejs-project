@@ -9,19 +9,22 @@
 
   <teleport to="body">
     <BaseDialogModal v-if="isInputInvalid">
-      <h2>Input is invalid!</h2>
-      <p>Please enter at least few characters...</p>
-      <button @click="isInputInvalid = false">Close</button>
+      <template #title>
+        <h2>Input is invalid!</h2>
+      </template>
+      <template #text>
+        <p>Please enter at least few characters...</p>
+      </template>
+      <template #actions>
+        <button @click="isInputInvalid = false">Close</button>
+      </template>
     </BaseDialogModal>
   </teleport>
 </template>
 
 <script>
-import BaseDialogModal from '../ui/BaseDialogModal.vue';
-
 export default {
   name: 'SampleForm',
-  components: { BaseDialogModal },
   data() {
     return {
       goal: '',
