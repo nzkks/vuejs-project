@@ -1,14 +1,14 @@
 <template>
   <BaseHeader>Learning Resources</BaseHeader>
-  <StoredResources :resources="storedResources"></StoredResources>
+  <TheResources />
 </template>
 
 <script>
-import StoredResources from './StoredResources.vue';
 import BaseHeader from '../layout/BaseHeader.vue';
+import TheResources from './TheResources.vue';
 
 export default {
-  components: { StoredResources, BaseHeader },
+  components: { TheResources, BaseHeader },
   data() {
     return {
       storedResources: [
@@ -25,6 +25,11 @@ export default {
           link: 'https://google.com',
         },
       ],
+    };
+  },
+  provide() {
+    return {
+      resources: this.storedResources,
     };
   },
 };
