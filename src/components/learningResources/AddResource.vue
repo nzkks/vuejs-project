@@ -1,6 +1,6 @@
 <template>
   <BaseCard>
-    <form @submit.prevent="submitData">
+    <form @submit.prevent="submitData" ref="resourceForm">
       <div class="form-control">
         <label for="title">Title</label>
         <input type="text" id="title" name="title" ref="titleInput" />
@@ -51,6 +51,7 @@ export default {
         return;
       } else {
         this.addResource(enteredTitle, enteredDesc, enteredLink);
+        this.$refs.resourceForm.reset();
         this.areInputsInvalid = false;
       }
     },
