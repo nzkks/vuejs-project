@@ -1,6 +1,6 @@
 <template>
-  <BaseCard
-    ><form @submit.prevent="submitData">
+  <BaseCard>
+    <form @submit.prevent="submitData">
       <div class="form-control">
         <label for="title">Title</label>
         <input type="text" id="title" name="title" ref="titleInput" />
@@ -18,19 +18,41 @@
       </div>
     </form>
   </BaseCard>
+
+  <BaseDialogModal v-if="areInputsInvalid">
+    <template #title>
+      <h2>Invalid Input</h2>
+    </template>
+    <template #text>
+      <p>Please enter at least few characters...</p>
+    </template>
+    <template #actions>
+      <BaseButton @click="areInputsInvalid = false">Close</BaseButton>
+    </template>
+  </BaseDialogModal>
 </template>
 
 <script>
 export default {
   name: 'AddResource',
   inject: ['addResource'],
+  data() {
+    return {
+      areInputsInvalid: false,
+    };
+  },
   methods: {
     submitData() {
       const enteredTitle = this.$refs.titleInput.value;
       const enteredDesc = this.$refs.descInput.value;
       const enteredLink = this.$refs.linkInput.value;
 
-      this.addResource(enteredTitle, enteredDesc, enteredLink);
+      if (enteredTitle === '' || enteredDesc === '' || enteredLink === '') {
+        this.areInputsInvalid = true;
+      } else {
+        this.addResource(enteredTitle, enteredDesc, enteredLink);
+        this.areInputsInvalid = false;
+      }
     },
   },
 };
