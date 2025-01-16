@@ -19,16 +19,14 @@
     </form>
   </BaseCard>
 
-  <teleport to="body">
-    <BaseDialogModal v-if="areInputsInvalid" title="Invalid Input" @close="confirmError">
-      <template #default>
-        <p>Please enter at least few characters...</p>
-      </template>
-      <template #actions>
-        <BaseButton @click="confirmError">Close</BaseButton>
-      </template>
-    </BaseDialogModal>
-  </teleport>
+  <BaseDialogModal v-if="areInputsInvalid" title="Invalid Input" @close="confirmError">
+    <template #default>
+      <p>Please enter at least few characters...</p>
+    </template>
+    <template #actions>
+      <BaseButton @click="confirmError">Close</BaseButton>
+    </template>
+  </BaseDialogModal>
 </template>
 
 <script>
