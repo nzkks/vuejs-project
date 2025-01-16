@@ -20,15 +20,12 @@
   </BaseCard>
 
   <teleport to="body">
-    <BaseDialogModal v-if="areInputsInvalid">
-      <template #title>
-        <h2>Invalid Input</h2>
-      </template>
-      <template #text>
+    <BaseDialogModal v-if="areInputsInvalid" title="Invalid Input" @close="confirmError">
+      <template #default>
         <p>Please enter at least few characters...</p>
       </template>
       <template #actions>
-        <BaseButton @click="areInputsInvalid = false">Close</BaseButton>
+        <BaseButton @click="confirmError">Close</BaseButton>
       </template>
     </BaseDialogModal>
   </teleport>
@@ -56,6 +53,9 @@ export default {
         this.addResource(enteredTitle, enteredDesc, enteredLink);
         this.areInputsInvalid = false;
       }
+    },
+    confirmError() {
+      this.areInputsInvalid = false;
     },
   },
 };
