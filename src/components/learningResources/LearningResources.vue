@@ -1,12 +1,14 @@
 <template>
+  <BaseHeader>Learning Resources</BaseHeader>
   <StoredResources :resources="storedResources"></StoredResources>
 </template>
 
 <script>
 import StoredResources from './StoredResources.vue';
+import BaseHeader from '../layout/BaseHeader.vue';
 
 export default {
-  components: { StoredResources },
+  components: { StoredResources, BaseHeader },
   data() {
     return {
       storedResources: [
