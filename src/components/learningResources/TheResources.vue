@@ -36,10 +36,22 @@ export default {
     setSelectedTab(tab) {
       this.selectedTab = tab;
     },
+    addResource(title, description, link) {
+      const newResource = {
+        id: new Date().toISOString(),
+        title,
+        description,
+        link,
+      };
+
+      this.storedResources.unshift(newResource);
+      this.selectedTab = 'StoredResources';
+    },
   },
   provide() {
     return {
       resources: this.storedResources,
+      addResource: this.addResource,
     };
   },
   computed: {
