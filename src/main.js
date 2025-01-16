@@ -16,6 +16,7 @@ import App from './App.vue';
 // import KnowledgeGrid from './components/topics/KnowledgeGrid.vue';
 
 import BaseBadge from './components/ui/BaseBadge.vue';
+import BaseCard from './components/ui/BaseCard.vue';
 
 const app = createApp(App);
 
@@ -34,5 +35,6 @@ const app = createApp(App);
 // app.component('knowledge-grid', KnowledgeGrid);
 
 app.component('BaseBadge', BaseBadge);
+app.component('BaseCard', BaseCard);
 
 app.mount('#app');

@@ -14,10 +14,7 @@
 </template>
 
 <script>
-import BaseCard from '../ui/BaseCard.vue';
-
 export default {
-  components: { BaseCard },
   props: ['fullName', 'infoText', 'role'],
 };
 </script>

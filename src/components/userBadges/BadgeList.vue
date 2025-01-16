@@ -17,14 +17,6 @@
   </section>
 </template>
 
-<script>
-import BaseCard from '../ui/BaseCard.vue';
-
-export default {
-  components: { BaseCard },
-};
-</script>
-
 <style scoped>
 section h2 {
   margin: 0.5rem 0;
