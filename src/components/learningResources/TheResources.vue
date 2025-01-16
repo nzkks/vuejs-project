@@ -4,7 +4,9 @@
     <BaseButton @click="setSelectedTab('AddResource')" :mode="addResBtnMode">Add Resource</BaseButton>
   </BaseCard>
 
-  <component :is="selectedTab" />
+  <keep-alive>
+    <component :is="selectedTab" />
+  </keep-alive>
 </template>
 
 <script>
