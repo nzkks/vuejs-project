@@ -1,14 +1,14 @@
 <template>
   <ul>
-    <ResourceItem v-for="resource in storedResources" :key="resource.id" :resource="resource"></ResourceItem>
+    <LearningResource v-for="resource in storedResources" :key="resource.id" :resource="resource"></LearningResource>
   </ul>
 </template>
 
 <script>
-import ResourceItem from './ResourceItem.vue';
+import LearningResource from './LearningResource.vue';
 
 export default {
-  components: { ResourceItem },
+  components: { LearningResource },
   data() {
     return {
       storedResources: [
