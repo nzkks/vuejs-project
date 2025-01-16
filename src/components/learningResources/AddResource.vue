@@ -49,8 +49,9 @@ export default {
       const enteredDesc = this.$refs.descInput.value;
       const enteredLink = this.$refs.linkInput.value;
 
-      if (enteredTitle === '' || enteredDesc === '' || enteredLink === '') {
+      if (enteredTitle.trim() === '' || enteredDesc.trim() === '' || enteredLink.trim() === '') {
         this.areInputsInvalid = true;
+        return;
       } else {
         this.addResource(enteredTitle, enteredDesc, enteredLink);
         this.areInputsInvalid = false;
