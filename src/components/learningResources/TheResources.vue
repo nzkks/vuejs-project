@@ -49,11 +49,19 @@ export default {
       this.storedResources.unshift(newResource);
       this.selectedTab = 'StoredResources';
     },
+    removeResource(resId) {
+      // this.storedResources = this.storedResources.filter(res => res.id !== resId);
+      // above statement only partially works. I.e. The above creates a new array that vue will not use it to rerender the list as it is using the old array in memory.
+
+      const resIndex = this.storedResources.findIndex(res => res.id === resId);
+      this.storedResources.splice(resIndex, 1);
+    },
   },
   provide() {
     return {
       resources: this.storedResources,
       addResource: this.addResource,
+      removeResource: this.removeResource,
     };
   },
   computed: {
