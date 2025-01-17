@@ -17,14 +17,18 @@ export default {
   name: 'RatingControl',
   props: ['modelValue'],
   emits: ['update:modelValue'],
-  data() {
-    return {
-      activeOption: null,
-    };
+  // data() {
+  //   return {
+  //     activeOption: null,
+  //   };
+  // },
+  computed: {
+    activeOption() {
+      return this.modelValue;
+    },
   },
   methods: {
     setActiveOption(option) {
-      this.activeOption = option;
       this.$emit('update:modelValue', option);
     },
   },
