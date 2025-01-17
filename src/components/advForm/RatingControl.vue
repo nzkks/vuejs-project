@@ -15,6 +15,8 @@
 <script>
 export default {
   name: 'RatingControl',
+  props: ['modelValue'],
+  emits: ['update:modelValue'],
   data() {
     return {
       activeOption: null,
@@ -23,6 +25,7 @@ export default {
   methods: {
     setActiveOption(option) {
       this.activeOption = option;
+      this.$emit('update:modelValue', option);
     },
   },
 };

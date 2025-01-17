@@ -49,7 +49,7 @@
     </div>
     <div class="form-control">
       <label>Rating</label>
-      <RatingControl />
+      <RatingControl v-model="rating" />
     </div>
     <hr />
     <div class="form-control">
@@ -78,6 +78,7 @@ export default {
       interest: [],
       how: null,
       terms: false,
+      rating: null,
 
       userNameValidity: 'pending',
     };
@@ -96,12 +97,15 @@ export default {
       console.log('Interest:', this.interest);
       console.log('How:', this.how);
 
+      console.log('Rating:', this.rating);
+
       console.log('Terms accepted:', this.terms);
 
       this.userAge = null;
       this.referrer = 'wom';
       this.interest = [];
       this.how = null;
+      this.rating = null;
       this.terms = false;
     },
     validateInput() {
