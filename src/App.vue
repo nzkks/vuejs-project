@@ -6,11 +6,14 @@
   <!-- <DynamicComponents /> -->
   <!-- <SampleForm /> -->
   <!-- <LearningResources /> -->
-  <TheForm />
+  <!-- <TheForm /> -->
+  <SurveyHome />
 </template>
 
 <script>
-import TheForm from './components/advForm/TheForm.vue';
+import SurveyHome from './components/survey/SurveyHome.vue';
+
+// import TheForm from './components/advForm/TheForm.vue';
 // import LearningResources from './components/learningResources/LearningResources.vue';
 
 // import DynamicComponents from './components/dynamicComponents/DynamicComponents.vue';
@@ -24,12 +27,9 @@ export default {
     // DynamicComponents,
     // SampleForm,
     // LearningResources,
-    TheForm,
+    // TheForm,
+    SurveyHome,
   },
-  data() {
-    return {};
-  },
-  methods: {},
 };
 </script>
 
