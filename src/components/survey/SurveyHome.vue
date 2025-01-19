@@ -1,6 +1,8 @@
 <template>
-  <learning-survey @survey-submit="storeSurvey"></learning-survey>
-  <user-experiences :results="savedSurveyResults"></user-experiences>
+  <learning-survey></learning-survey>
+  <!-- <learning-survey @survey-submit="storeSurvey"></learning-survey> -->
+  <user-experiences></user-experiences>
+  <!-- <user-experiences :results="savedSurveyResults"></user-experiences> -->
 </template>
 
 <script>
@@ -12,21 +14,21 @@ export default {
     LearningSurvey,
     UserExperiences,
   },
-  data() {
-    return {
-      savedSurveyResults: [],
-    };
-  },
-  methods: {
-    storeSurvey(surveyData) {
-      const surveyResult = {
-        name: surveyData.userName,
-        rating: surveyData.rating,
-        id: new Date().toISOString(),
-      };
-      this.savedSurveyResults.push(surveyResult);
-      console.log(surveyResult);
-    },
-  },
+  // data() {
+  //   return {
+  //     savedSurveyResults: [],
+  //   };
+  // },
+  // methods: {
+  //   storeSurvey(surveyData) {
+  //     const surveyResult = {
+  //       name: surveyData.userName,
+  //       rating: surveyData.rating,
+  //       id: new Date().toISOString(),
+  //     };
+  //     this.savedSurveyResults.push(surveyResult);
+  //     console.log(surveyResult);
+  //   },
+  // },
 };
 </script>
