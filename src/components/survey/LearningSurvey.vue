@@ -57,10 +57,17 @@ export default {
           name: this.enteredName,
           rating: this.chosenRating,
         }),
-      }).catch(error => {
-        console.log(error);
-        this.error = 'Something went wrong. please try again later.';
-      });
+      })
+        .then(response => {
+          if (response.ok) {
+            // ...
+          } else {
+            throw new Error('Request failed! Could not store data.');
+          }
+        })
+        .catch(error => {
+          this.error = error.message;
+        });
 
       this.enteredName = '';
       this.chosenRating = null;
