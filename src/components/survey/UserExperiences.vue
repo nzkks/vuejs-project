@@ -14,7 +14,7 @@
         No stored experiences found. Start adding some!
       </p>
 
-      <ul v-else-if="!isLoading && results && results.length > 0">
+      <ul v-else>
         <survey-result
           v-for="result in results"
           :key="result.id"
