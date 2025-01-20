@@ -8,7 +8,7 @@
 
       <p v-if="isLoading">Loading...</p>
 
-      <p v-else-if="!isLoading && error">{{ error }}</p>
+      <p v-else-if="!isLoading && error" class="error">{{ error }}</p>
 
       <p v-else-if="!isLoading && (!results || results.length === 0)">
         No stored experiences found. Start adding some!
@@ -80,5 +80,9 @@ ul {
   list-style: none;
   margin: 0;
   padding: 0;
+}
+
+.error {
+  color: red;
 }
 </style>
