@@ -20,7 +20,8 @@
           <input type="radio" id="rating-great" value="great" name="rating" v-model="chosenRating" />
           <label for="rating-great">Great</label>
         </div>
-        <p v-if="invalidInput">One or more input fields are invalid. Please check your provided data.</p>
+        <p v-if="invalidInput" class="error">One or more input fields are invalid. Please check your provided data.</p>
+        <p v-if="error" class="error">{{ error }}</p>
         <div>
           <base-button>Submit</base-button>
         </div>
@@ -36,6 +37,7 @@ export default {
       enteredName: '',
       chosenRating: null,
       invalidInput: false,
+      error: null,
     };
   },
   methods: {
@@ -55,6 +57,9 @@ export default {
           name: this.enteredName,
           rating: this.chosenRating,
         }),
+      }).catch(error => {
+        console.log(error);
+        this.error = 'Something went wrong. please try again later.';
       });
 
       this.enteredName = '';
@@ -73,5 +78,9 @@ input[type='text'] {
   display: block;
   width: 20rem;
   margin-top: 0.5rem;
+}
+
+.error {
+  color: red;
 }
 </style>
