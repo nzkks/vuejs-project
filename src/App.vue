@@ -7,11 +7,12 @@
   <!-- <SampleForm /> -->
   <!-- <LearningResources /> -->
   <!-- <TheForm /> -->
-  <SurveyHome />
+  <!-- <SurveyHome /> -->
+  <RoutingExample />
 </template>
 
 <script>
-import SurveyHome from './components/survey/SurveyHome.vue';
+// import SurveyHome from './components/survey/SurveyHome.vue';
 
 // import TheForm from './components/advForm/TheForm.vue';
 // import LearningResources from './components/learningResources/LearningResources.vue';
@@ -21,6 +22,8 @@ import SurveyHome from './components/survey/SurveyHome.vue';
 
 // import UserBadges from './components/userBadges/UserBadges.vue';
 
+import RoutingExample from './components/routing/RoutingExample.vue';
+
 export default {
   components: {
     // UserBadges
@@ -28,7 +31,9 @@ export default {
     // SampleForm,
     // LearningResources,
     // TheForm,
-    SurveyHome,
+    // SurveyHome,
+
+    RoutingExample,
   },
 };
 </script>
