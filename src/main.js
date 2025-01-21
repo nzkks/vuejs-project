@@ -24,12 +24,16 @@ import BaseDialogModal from './components/ui/BaseDialogModal.vue';
 
 import TeamsList from './components/routing/teams/TeamsList.vue';
 import UsersList from './components/routing/users/UsersList.vue';
+import TeamMembers from './components/routing/teams/TeamMembers.vue';
 
 const router = createRouter({
   history: createWebHistory(),
   routes: [
     { path: '/teams', component: TeamsList },
     { path: '/users', component: UsersList },
+    // { path: '/teams/:teamId' },
+    // { path: '/teams/new' }, // The above dynamic route should be below this line.
+    { path: '/teams/:teamId', component: TeamMembers },
   ],
   linkActiveClass: 'active',
 });
