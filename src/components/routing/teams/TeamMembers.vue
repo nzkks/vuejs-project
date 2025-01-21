@@ -15,6 +15,7 @@ import { RouterLink } from 'vue-router';
 import UserItem from '../users/UserItem.vue';
 
 export default {
+  props: ['teamId'],
   inject: ['teams', 'users'],
   components: {
     UserItem,
@@ -27,8 +28,7 @@ export default {
     };
   },
   methods: {
-    loadTeamMembers(route) {
-      const teamId = route.params.teamId;
+    loadTeamMembers(teamId) {
       const selectedTeam = this.teams.find(team => team.id === teamId);
       const members = selectedTeam.members;
 
@@ -43,12 +43,12 @@ export default {
   },
   created() {
     // this.$route.path.startsWith('/teams/t1');
-    this.loadTeamMembers(this.$route);
+    this.loadTeamMembers(this.teamId);
   },
   watch: {
-    // Vue router does not destroy and rebuild the loaded components when navigated around. It is more efficient to cache them when the URL changes. But the $route property always have the latest info on the loaded route and it will update when the URL changes. One way of handling this is to watch the $route property.
-    $route(newRoute) {
-      this.loadTeamMembers(newRoute);
+    // watch the "teamId" prop for changes.
+    teamId(newId) {
+      this.loadTeamMembers(newId);
     },
   },
 };
