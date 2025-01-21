@@ -29,7 +29,8 @@ import TeamMembers from './components/routing/teams/TeamMembers.vue';
 const router = createRouter({
   history: createWebHistory(),
   routes: [
-    { path: '/', redirect: '/teams' },
+    { path: '/', redirect: '/teams' }, // redirect does show the route in the URL.
+    // { path: '/teams', component: TeamsList, alias: '/' }, // alias does NOT show the route in the URL. example: /teams.
     { path: '/teams', component: TeamsList },
     { path: '/users', component: UsersList },
 
