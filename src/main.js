@@ -25,6 +25,7 @@ import BaseDialogModal from './components/ui/BaseDialogModal.vue';
 import TeamsList from './components/routing/teams/TeamsList.vue';
 import UsersList from './components/routing/users/UsersList.vue';
 import TeamMembers from './components/routing/teams/TeamMembers.vue';
+import NotFound from './components/routing/nav/NotFound.vue';
 
 const router = createRouter({
   history: createWebHistory(),
@@ -39,6 +40,8 @@ const router = createRouter({
 
     // { path: '/teams/:teamId', component: TeamMembers },
     { path: '/teams/:teamId', component: TeamMembers, props: true }, // the dynamic params (teamId) now become props
+    // { path: '/:notFound(.*)', redirect: '/teams' }, // this is a catch-all route
+    { path: '/:notFound(.*)', component: NotFound }, // this is a catch-all route
   ],
   linkActiveClass: 'active',
 });
