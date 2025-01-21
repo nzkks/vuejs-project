@@ -1,4 +1,6 @@
 <template>
+  <!-- Example button to just show the "programmatic route navigation" -->
+  <BaseButton @click="confirmInput">Confirm</BaseButton>
   <ul>
     <user-item v-for="user in users" :key="user.id" :name="user.fullName" :role="user.role"></user-item>
   </ul>
@@ -12,6 +14,15 @@ export default {
     UserItem,
   },
   inject: ['users'],
+  methods: {
+    confirmInput() {
+      // Do something
+
+      this.$router.push('/teams');
+      // this.$router.back();
+      // this.$router.forward();
+    },
+  },
 };
 </script>
 
