@@ -1,5 +1,5 @@
 <template>
-  <the-navigation @set-page="setActivePage"></the-navigation>
+  <the-navigation></the-navigation>
   <main>
     <RouterView></RouterView>
   </main>
@@ -36,11 +36,6 @@ export default {
       teams: this.teams,
       users: this.users,
     };
-  },
-  methods: {
-    setActivePage(page) {
-      this.activePage = page;
-    },
   },
 };
 </script>

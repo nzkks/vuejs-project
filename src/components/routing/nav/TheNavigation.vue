@@ -3,10 +3,10 @@
     <nav>
       <ul>
         <li>
-          <button @click="setActivePage('teams-list')">Teams</button>
+          <RouterLink to="/teams">Teams</RouterLink>
         </li>
         <li>
-          <button @click="setActivePage('users-list')">Users</button>
+          <RouterLink to="/users">Users</RouterLink>
         </li>
       </ul>
     </nav>
@@ -14,12 +14,11 @@
 </template>
 
 <script>
+import { RouterLink } from 'vue-router';
+
 export default {
-  emits: ['set-page'],
-  methods: {
-    setActivePage(page) {
-      this.$emit('set-page', page);
-    },
+  components: {
+    RouterLink,
   },
 };
 </script>
@@ -49,7 +48,7 @@ li {
   margin: 0 2rem;
 }
 
-button {
+a {
   font: inherit;
   background: transparent;
   border: 1px solid transparent;
@@ -57,10 +56,11 @@ button {
   color: white;
   padding: 0.5rem 1.5rem;
   display: inline-block;
+  text-decoration: none;
 }
 
-button:hover,
-button:active {
+a:hover,
+a:active {
   color: #f1a80a;
   border-color: #f1a80a;
   background-color: #1a037e;
