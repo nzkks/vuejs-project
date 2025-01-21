@@ -32,14 +32,21 @@ const router = createRouter({
   routes: [
     { path: '/', redirect: '/teams' }, // redirect does show the route in the URL.
     // { path: '/teams', component: TeamsList, alias: '/' }, // alias does NOT show the route in the URL. example: /teams.
-    { path: '/teams', component: TeamsList },
+    // { path: '/teams', component: TeamsList },
+    {
+      path: '/teams',
+      component: TeamsList,
+      children: [
+        { path: ':teamId', component: TeamMembers, props: true }, // so no need of specifying '/teams/:teamId'.
+      ],
+    },
     { path: '/users', component: UsersList },
 
     // { path: '/teams/:teamId' },
     // { path: '/teams/new' }, // The above dynamic route should be below this line.
 
     // { path: '/teams/:teamId', component: TeamMembers },
-    { path: '/teams/:teamId', component: TeamMembers, props: true }, // the dynamic params (teamId) now become props
+    // { path: '/teams/:teamId', component: TeamMembers, props: true }, // the dynamic params (teamId) now become props
     // { path: '/:notFound(.*)', redirect: '/teams' }, // this is a catch-all route
     { path: '/:notFound(.*)', component: NotFound }, // this is a catch-all route
   ],

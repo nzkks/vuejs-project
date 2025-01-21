@@ -1,6 +1,7 @@
 <template>
   <the-navigation></the-navigation>
   <main>
+    <!-- Below RouterView only renders the root level routes -->
     <RouterView></RouterView>
   </main>
 </template>
