@@ -29,6 +29,7 @@ import TeamMembers from './components/routing/teams/TeamMembers.vue';
 const router = createRouter({
   history: createWebHistory(),
   routes: [
+    { path: '/', component: TeamsList },
     { path: '/teams', component: TeamsList },
     { path: '/users', component: UsersList },
 
