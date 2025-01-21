@@ -1,20 +1,18 @@
 <template>
   <the-navigation @set-page="setActivePage"></the-navigation>
   <main>
-    <component :is="activePage"></component>
+    <RouterView></RouterView>
   </main>
 </template>
 
 <script>
-import TeamsList from './teams/TeamsList.vue';
-import UsersList from './users/UsersList.vue';
 import TheNavigation from './nav/TheNavigation.vue';
+import { RouterView } from 'vue-router';
 
 export default {
   components: {
     TheNavigation,
-    TeamsList,
-    UsersList,
+    RouterView,
   },
   data() {
     return {

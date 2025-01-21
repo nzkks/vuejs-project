@@ -1,6 +1,8 @@
 import { createApp } from 'vue';
+import { createRouter, createWebHistory } from 'vue-router';
 
 import App from './App.vue';
+
 // import FriendContacts from './components/friends/FriendContacts.vue';
 // import FriendContact from './components/friends/FriendContact.vue';
 // import CreateFriendContact from './components/friends/CreateFriendContact.vue';
@@ -19,6 +21,17 @@ import BaseBadge from './components/ui/BaseBadge.vue';
 import BaseButton from './components/ui/BaseButton.vue';
 import BaseCard from './components/ui/BaseCard.vue';
 import BaseDialogModal from './components/ui/BaseDialogModal.vue';
+
+import TeamsList from './components/routing/teams/TeamsList.vue';
+import UsersList from './components/routing/users/UsersList.vue';
+
+const router = createRouter({
+  history: createWebHistory(),
+  routes: [
+    { path: '/teams', component: TeamsList },
+    { path: '/users', component: UsersList },
+  ],
+});
 
 const app = createApp(App);
 
@@ -40,5 +53,7 @@ app.component('BaseBadge', BaseBadge);
 app.component('BaseButton', BaseButton);
 app.component('BaseCard', BaseCard);
 app.component('BaseDialogModal', BaseDialogModal);
+
+app.use(router);
 
 app.mount('#app');
