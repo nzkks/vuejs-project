@@ -37,7 +37,7 @@ const router = createRouter({
       path: '/teams',
       component: TeamsList,
       children: [
-        { path: ':teamId', component: TeamMembers, props: true }, // so no need of specifying '/teams/:teamId'.
+        { name: 'team-members', path: ':teamId', component: TeamMembers, props: true }, // so no need of specifying '/teams/:teamId'.
       ],
     },
     { path: '/users', component: UsersList },
