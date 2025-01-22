@@ -20,6 +20,10 @@ export default {
   methods: {
     animateBlock() {
       this.animatedBlock = true;
+
+      setTimeout(() => {
+        this.animatedBlock = false;
+      }, 1500);
     },
     showDialog() {
       this.dialogIsVisible = true;
