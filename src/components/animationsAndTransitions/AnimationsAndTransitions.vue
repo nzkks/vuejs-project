@@ -1,21 +1,21 @@
 <template>
   <div class="container">
     <div class="block" :class="{ animate: animatedBlock }"></div>
-    <button @click="animateBlock">Animate</button>
+    <BaseButton @click="animateBlock">Animate</BaseButton>
   </div>
 
   <div class="container">
     <!-- Use Vue's Transition element to wrap to achieve the enter/exit animation. Especially exit animation which was not possible because there was no element in the DOM to animate  -->
     <Transition> <p v-if="paragraphIsVisible">This is only sometimes visible</p></Transition>
-    <button @click="toggleParagraph">Toggle Paragraph</button>
+    <BaseButton @click="toggleParagraph">Toggle Paragraph</BaseButton>
   </div>
 
   <BaseDialogModal @close="hideDialog" v-if="dialogIsVisible">
     <p>This is a test dialog!</p>
-    <button @click="hideDialog">Close it!</button>
+    <BaseButton @click="hideDialog">Close it!</BaseButton>
   </BaseDialogModal>
   <div class="container">
-    <button @click="showDialog">Show Dialog</button>
+    <BaseButton @click="showDialog">Show Dialog</BaseButton>
   </div>
 </template>
 
