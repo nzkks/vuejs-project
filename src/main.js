@@ -62,6 +62,20 @@ const router = createRouter({
   },
 });
 
+router.beforeEach(function (to, from, next) {
+  // console.log('Global Before each');
+  // if (to.name === 'team-members') {
+  //   next();
+  // } else {
+  // guarding the navigation. i.e. only allow/force navigation to '/teams/t2'
+  // example scenario: if the user is not authenticated, redirect to '/teams/t2'
+  //   next({ name: 'team-members', params: { teamId: 't2' } });
+  // }
+
+  // next(false) // this will cancel the navigation
+  next(); // next(true)
+});
+
 const app = createApp(App);
 
 // app.component('users-wrapper', UsersWrapper);
