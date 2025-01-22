@@ -46,7 +46,7 @@ const router = createRouter({
       path: '/users',
       components: { default: UsersList, footer: UsersFooter },
       beforeEnter: (to, from, next) => {
-        // console.log('users beforeEnter');
+        console.log('users beforeEnter');
         // console.log({ to, from });
 
         // if (to.path === '/users') {// only continue if this condition and any other condition is met
@@ -75,7 +75,7 @@ const router = createRouter({
 });
 
 router.beforeEach(function (to, from, next) {
-  // console.log('Global Before each');
+  console.log('Global Before each');
   // if (to.name === 'team-members') {
   //   next();
   // } else {
