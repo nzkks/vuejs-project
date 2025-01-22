@@ -6,7 +6,7 @@
 
   <div class="container">
     <!-- Use Vue's Transition element to wrap to achieve the enter/exit animation. Especially exit animation which was not possible because there was no element in the DOM to animate  -->
-    <Transition> <p v-if="paragraphIsVisible">This is only sometimes visible</p></Transition>
+    <Transition name="para"> <p v-if="paragraphIsVisible">This is only sometimes visible</p></Transition>
     <BaseButton @click="toggleParagraph">Toggle Paragraph</BaseButton>
   </div>
 
@@ -65,32 +65,32 @@ export default {
   border-radius: 12px;
 }
 
-/* .v-enter-from {
+/* .para-enter-from {
   opacity: 0;
   transform: translateY(-30px);
 } */
 
-.v-enter-active {
+.para-enter-active {
   /* transition: all 0.3s ease-out; */
   animation: appearance 0.3s ease-in;
 }
 
-/* .v-enter-to {
+/* .para-enter-to {
   opacity: 1;
   transform: translateY(0);
 } */
 
-/* .v-leave-from {
+/* .para-leave-from {
   opacity: 1;
   transform: translateY(0);
 } */
 
-.v-leave-active {
+.para-leave-active {
   /* transition: all 0.3s ease-in; */
   animation: appearance 0.3s ease-out;
 }
 
-/* .v-leave-to {
+/* .para-leave-to {
   opacity: 0;
   transform: translateY(30px);
 } */
