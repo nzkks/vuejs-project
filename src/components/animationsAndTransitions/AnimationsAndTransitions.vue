@@ -3,6 +3,13 @@
     <div class="block" :class="{ animate: animatedBlock }"></div>
     <button @click="animateBlock">Animate</button>
   </div>
+
+  <div class="container">
+    <!-- Use Vue's Transition element to wrap to achieve the enter/exit animation. Especially exit animation which was not possible because there was no element in the DOM to animate  -->
+    <Transition> <p v-if="paragraphIsVisible">This is only sometimes visible</p></Transition>
+    <button @click="toggleParagraph">Toggle Paragraph</button>
+  </div>
+
   <BaseDialogModal @close="hideDialog" v-if="dialogIsVisible">
     <p>This is a test dialog!</p>
     <button @click="hideDialog">Close it!</button>
@@ -15,9 +22,12 @@
 <script>
 export default {
   data() {
-    return { animatedBlock: false, dialogIsVisible: false };
+    return { animatedBlock: false, dialogIsVisible: false, paragraphIsVisible: false };
   },
   methods: {
+    toggleParagraph() {
+      this.paragraphIsVisible = !this.paragraphIsVisible;
+    },
     animateBlock() {
       this.animatedBlock = true;
 
@@ -53,6 +63,34 @@ export default {
   padding: 2rem;
   border: 2px solid #ccc;
   border-radius: 12px;
+}
+
+.v-enter-from {
+  opacity: 0;
+  transform: translateY(-30px);
+}
+
+.v-enter-active {
+  transition: all 0.3s ease-out;
+}
+
+.v-enter-to {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.v-leave-from {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.v-leave-active {
+  transition: all 0.3s ease-in;
+}
+
+.v-leave-to {
+  opacity: 0;
+  transform: translateY(30px);
 }
 
 .animate {
