@@ -54,7 +54,7 @@ const router = createRouter({
   ],
   linkActiveClass: 'active',
   scrollBehavior(to, from, savedPosition) {
-    console.log({ to, from, savedPosition });
+    // console.log({ to, from, savedPosition });
     if (savedPosition) {
       return savedPosition;
     }

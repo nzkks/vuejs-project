@@ -46,7 +46,7 @@ export default {
     this.loadTeamMembers(this.teamId);
 
     // even though we are using "props: true" in the route, we can only access the query params when using "this.$route.query"
-    console.log(this.$route.query); // { sort: 'asc' }
+    // console.log(this.$route.query); // { sort: 'asc' }
   },
   watch: {
     // watch the "teamId" prop for changes.
