@@ -42,7 +42,19 @@ const router = createRouter({
         { name: 'team-members', path: ':teamId', component: TeamMembers, props: true }, // so no need of specifying '/teams/:teamId'.
       ],
     },
-    { path: '/users', components: { default: UsersList, footer: UsersFooter } },
+    {
+      path: '/users',
+      components: { default: UsersList, footer: UsersFooter },
+      beforeEnter: (to, from, next) => {
+        // console.log('users beforeEnter');
+        // console.log({ to, from });
+
+        // if (to.path === '/users') {// only continue if this condition and any other condition is met
+        //   next();
+        // }
+        next();
+      },
+    },
 
     // { path: '/teams/:teamId' },
     // { path: '/teams/new' }, // The above dynamic route should be below this line.
