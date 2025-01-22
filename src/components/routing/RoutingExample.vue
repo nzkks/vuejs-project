@@ -4,6 +4,9 @@
     <!-- Below RouterView only renders the root level routes -->
     <RouterView></RouterView>
   </main>
+  <footer>
+    <RouterView name="footer"></RouterView>
+  </footer>
 </template>
 
 <script>

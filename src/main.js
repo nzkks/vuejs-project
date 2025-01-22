@@ -23,8 +23,10 @@ import BaseCard from './components/ui/BaseCard.vue';
 import BaseDialogModal from './components/ui/BaseDialogModal.vue';
 
 import TeamsList from './components/routing/teams/TeamsList.vue';
-import UsersList from './components/routing/users/UsersList.vue';
+import TeamsFooter from './components/routing/teams/TeamsFooter.vue';
 import TeamMembers from './components/routing/teams/TeamMembers.vue';
+import UsersList from './components/routing/users/UsersList.vue';
+import UsersFooter from './components/routing/users/UsersFooter.vue';
 import NotFound from './components/routing/nav/NotFound.vue';
 
 const router = createRouter({
@@ -35,12 +37,12 @@ const router = createRouter({
     // { path: '/teams', component: TeamsList },
     {
       path: '/teams',
-      component: TeamsList,
+      components: { default: TeamsList, footer: TeamsFooter }, // default is the main component of the route.TeamsList,
       children: [
         { name: 'team-members', path: ':teamId', component: TeamMembers, props: true }, // so no need of specifying '/teams/:teamId'.
       ],
     },
-    { path: '/users', component: UsersList },
+    { path: '/users', components: { default: UsersList, footer: UsersFooter } },
 
     // { path: '/teams/:teamId' },
     // { path: '/teams/new' }, // The above dynamic route should be below this line.
