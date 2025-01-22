@@ -48,6 +48,12 @@ export default {
     // even though we are using "props: true" in the route, we can only access the query params when using "this.$route.query"
     // console.log(this.$route.query); // { sort: 'asc' }
   },
+  beforeRouteUpdate(to, from, next) {
+    console.log('TeamMembers Cmp beforeRouteUpdate');
+    // console.log(to, from);
+    // this.loadTeamMembers(to.params.teamId); // this is a (less effective) alternative aproach to below "watch" teamId. The reason behind this approach is less effective is, this hook is called if the component is loaded and reloaded through routing. Any way, if this approach is used, there is no need of both watch and beforeRouteUpdate
+    next();
+  },
   watch: {
     // watch the "teamId" prop for changes.
     teamId(newId) {
