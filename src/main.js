@@ -88,6 +88,13 @@ router.beforeEach(function (to, from, next) {
   next(); // next(true)
 });
 
+router.afterEach(function (to, from) {
+  console.log('Global After each');
+  console.log({ to, from });
+
+  // This is just used for logging purposes (send logs to analytics, etc). Not used for controlling the navigation
+});
+
 const app = createApp(App);
 
 // app.component('users-wrapper', UsersWrapper);
