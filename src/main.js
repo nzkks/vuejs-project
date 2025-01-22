@@ -78,12 +78,12 @@ const router = createRouter({
 router.beforeEach(function (to, from, next) {
   console.log('Global Before each');
 
-  if (to.meta.requiresAuth) {
-    console.log('requires authentication');
-    next(); // do something like deny the navigation (next(false)) or redirect (next({name: 'login'}))
-  } else {
-    next();
-  }
+  // if (to.meta.requiresAuth) {
+  //   console.log('requires authentication');
+  //   next(); // do something like deny the navigation (next(false)) or redirect (next({name: 'login'}))
+  // } else {
+  //   next();
+  // }
 
   // if (to.name === 'team-members') {
   //   next();
