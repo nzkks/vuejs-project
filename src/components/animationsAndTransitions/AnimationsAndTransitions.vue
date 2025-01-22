@@ -52,6 +52,18 @@ export default {
 }
 
 .animate {
-  transform: translateX(-150px);
+  animation: slide-scale 0.3s ease-out forwards;
+}
+
+@keyframes slide-scale {
+  0% {
+    transform: translateX(0) scale(1);
+  }
+  70% {
+    transform: translateX(-120px) scale(1.4);
+  }
+  100% {
+    transform: translateX(-150px) scale(1);
+  }
 }
 </style>
