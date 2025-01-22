@@ -7,6 +7,9 @@
   <div class="container">
     <!-- Use Vue's Transition element to wrap to achieve the enter/exit animation. Especially exit animation which was not possible because there was no element in the DOM to animate  -->
     <Transition name="para"> <p v-if="paragraphIsVisible">This is only sometimes visible</p></Transition>
+
+    <!-- Instead of using the name attribute, we can also customize the enter and leave classes. So any third party animation classes can be used. -->
+    <!-- <Transition enter-active-class="animate" leave-active-class="animate"> <p v-if="paragraphIsVisible">This is only sometimes visible</p></Transition> -->
     <BaseButton @click="toggleParagraph">Toggle Paragraph</BaseButton>
   </div>
 
