@@ -44,6 +44,7 @@ dialog {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
   padding: 0;
   overflow: hidden;
+  animation: modal 0.3s ease-out forwards;
 }
 
 .backdrop {
@@ -82,6 +83,18 @@ menu {
   dialog {
     left: calc(50% - 20rem);
     width: 40rem;
+  }
+}
+
+@keyframes modal {
+  from {
+    opacity: 0;
+    transform: translateY(-50px) scale(0.9);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
   }
 }
 </style>
