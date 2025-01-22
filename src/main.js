@@ -45,6 +45,7 @@ const router = createRouter({
     {
       path: '/users',
       components: { default: UsersList, footer: UsersFooter },
+      meta: { requiresAuth: true }, // any custom property can be added like this example
       beforeEnter: (to, from, next) => {
         console.log('users beforeEnter');
         // console.log({ to, from });
@@ -76,6 +77,14 @@ const router = createRouter({
 
 router.beforeEach(function (to, from, next) {
   console.log('Global Before each');
+
+  if (to.meta.requiresAuth) {
+    console.log('requires authentication');
+    next(); // do something like deny the navigation (next(false)) or redirect (next({name: 'login'}))
+  } else {
+    next();
+  }
+
   // if (to.name === 'team-members') {
   //   next();
   // } else {
