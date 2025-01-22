@@ -53,6 +53,13 @@ const router = createRouter({
     { path: '/:notFound(.*)', component: NotFound }, // this is a catch-all route
   ],
   linkActiveClass: 'active',
+  scrollBehavior(to, from, savedPosition) {
+    console.log({ to, from, savedPosition });
+    if (savedPosition) {
+      return savedPosition;
+    }
+    return { top: 0, left: 0, behavior: 'smooth' };
+  },
 });
 
 const app = createApp(App);
