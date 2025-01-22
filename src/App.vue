@@ -8,7 +8,8 @@
   <!-- <LearningResources /> -->
   <!-- <TheForm /> -->
   <!-- <SurveyHome /> -->
-  <RoutingExample />
+  <!-- <RoutingExample /> -->
+  <AnimationsAndTransitions />
 </template>
 
 <script>
@@ -22,7 +23,9 @@
 
 // import UserBadges from './components/userBadges/UserBadges.vue';
 
-import RoutingExample from './components/routing/RoutingExample.vue';
+// import RoutingExample from './components/routing/RoutingExample.vue';
+
+import AnimationsAndTransitions from './components/animationsAndTransitions/AnimationsAndTransitions.vue';
 
 export default {
   components: {
@@ -32,8 +35,9 @@ export default {
     // LearningResources,
     // TheForm,
     // SurveyHome,
+    // RoutingExample,
 
-    RoutingExample,
+    AnimationsAndTransitions,
   },
 };
 </script>
