@@ -22,12 +22,12 @@ import BaseButton from './components/ui/BaseButton.vue';
 import BaseCard from './components/ui/BaseCard.vue';
 import BaseDialogModal from './components/ui/BaseDialogModal.vue';
 
-import TeamsList from './components/routing/teams/TeamsList.vue';
-import TeamsFooter from './components/routing/teams/TeamsFooter.vue';
+import TeamsList from './components/routing/pages/TeamsList.vue';
+import TeamsFooter from './components/routing/pages/TeamsFooter.vue';
 import TeamMembers from './components/routing/teams/TeamMembers.vue';
-import UsersList from './components/routing/users/UsersList.vue';
-import UsersFooter from './components/routing/users/UsersFooter.vue';
-import NotFound from './components/routing/nav/NotFound.vue';
+import UsersList from './components/routing/pages/UsersList.vue';
+import UsersFooter from './components/routing/pages/UsersFooter.vue';
+import NotFound from './components/routing/pages/NotFound.vue';
 
 const router = createRouter({
   history: createWebHistory(),

@@ -14,8 +14,7 @@
 
 <script>
 import { RouterView } from 'vue-router';
-
-import TeamsItem from './TeamsItem.vue';
+import TeamsItem from '../teams/TeamsItem.vue';
 
 export default {
   components: {
