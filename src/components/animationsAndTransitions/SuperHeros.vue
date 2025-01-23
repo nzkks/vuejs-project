@@ -1,7 +1,7 @@
 <template>
-  <ul>
+  <TransitionGroup tag="ul" name="heroes-list">
     <li v-for="superHero in superHeros" :key="superHero" @click="deleteHero(superHero)">{{ superHero }}</li>
-  </ul>
+  </TransitionGroup>
 
   <div>
     <input type="text" ref="heroInput" />
@@ -19,7 +19,8 @@ export default {
   methods: {
     addHero() {
       const hero = this.$refs.heroInput.value;
-      this.superHeros.push(hero);
+      if (hero === '') return;
+      this.superHeros.unshift(hero);
       this.$refs.heroInput.value = '';
     },
     deleteHero(hero) {
@@ -53,5 +54,35 @@ input {
   border: 1px solid #ccc;
   padding: 5px;
   box-sizing: border-box;
+}
+
+.heroes-list-enter-from {
+  opacity: 0;
+  transform: translateX(-30px);
+}
+
+.heroes-list-enter-active {
+  transition: all 1s ease-out;
+}
+
+.heroes-list-enter-to,
+.heroes-list-leave-from {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.heroes-list-leave-active {
+  transition: all 1s ease-in;
+  position: absolute; /* This is to make the exit animation looks smooth. Otherwise it snaps */
+}
+
+.heroes-list-leave-to {
+  opacity: 0;
+  transform: translateX(30px);
+}
+
+/* -move hook is to move other elements from old place to new place */
+.heroes-list-move {
+  transition: transform 0.8s ease;
 }
 </style>
