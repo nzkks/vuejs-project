@@ -1,21 +1,25 @@
 <template>
   <teleport to="body">
-    <div class="backdrop" @click="$emit('close')"></div>
-    <dialog open>
-      <header>
-        <slot name="header">
-          <h2>{{ title }}</h2>
-        </slot>
-      </header>
-      <section>
-        <slot></slot>
-      </section>
-      <menu>
-        <slot name="actions">
-          <base-button @click="$emit('close')">Close</base-button>
-        </slot>
-      </menu>
-    </dialog>
+    <div class="backdrop" @click="$emit('close')" v-if="open"></div>
+
+    <!-- Since Vue.js's Transition element can have just one direct child element, the dialog element is wrapped in a Transition element -->
+    <Transition name="modal">
+      <dialog open v-if="open">
+        <header>
+          <slot name="header">
+            <h2>{{ title }}</h2>
+          </slot>
+        </header>
+        <section>
+          <slot></slot>
+        </section>
+        <menu>
+          <slot name="actions">
+            <base-button @click="$emit('close')">Close</base-button>
+          </slot>
+        </menu>
+      </dialog>
+    </Transition>
   </teleport>
 </template>
 
@@ -25,6 +29,11 @@ export default {
     title: {
       type: String,
       required: false,
+    },
+    open: {
+      type: Boolean,
+      required: false,
+      default: false,
     },
   },
   emits: ['close'],
@@ -44,7 +53,6 @@ dialog {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
   padding: 0;
   overflow: hidden;
-  animation: modal 0.3s ease-out forwards;
 }
 
 .backdrop {
@@ -84,6 +92,14 @@ menu {
     left: calc(50% - 20rem);
     width: 40rem;
   }
+}
+
+.modal-enter-active {
+  animation: modal 0.3s ease-out;
+}
+
+.modal-leave-active {
+  animation: modal 0.3s ease-in reverse;
 }
 
 @keyframes modal {

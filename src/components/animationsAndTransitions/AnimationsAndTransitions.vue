@@ -13,10 +13,11 @@
     <BaseButton @click="toggleParagraph">Toggle Paragraph</BaseButton>
   </div>
 
-  <BaseDialogModal @close="hideDialog" v-if="dialogIsVisible">
+  <BaseDialogModal @close="hideDialog" :open="dialogIsVisible">
     <p>This is a test dialog!</p>
     <BaseButton @click="hideDialog">Close it!</BaseButton>
   </BaseDialogModal>
+
   <div class="container">
     <BaseButton @click="showDialog">Show Dialog</BaseButton>
   </div>
