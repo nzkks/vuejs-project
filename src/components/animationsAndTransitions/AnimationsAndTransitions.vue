@@ -13,6 +13,14 @@
     <BaseButton @click="toggleParagraph">Toggle Paragraph</BaseButton>
   </div>
 
+  <div class="container">
+    <!-- Even though Vue.js's Transition element can have just one direct child element, there can be multiple children as long as only one will be available anytime in the DOM -->
+    <transition name="fade-button" mode="out-in">
+      <BaseButton @click="showUsers" v-if="!usersAreVisible">Show Users</BaseButton>
+      <BaseButton @click="hideUsers" v-else>Hide Users</BaseButton>
+    </transition>
+  </div>
+
   <BaseDialogModal @close="hideDialog" :open="dialogIsVisible">
     <p>This is a test dialog!</p>
     <BaseButton @click="hideDialog">Close it!</BaseButton>
@@ -26,9 +34,15 @@
 <script>
 export default {
   data() {
-    return { animatedBlock: false, dialogIsVisible: false, paragraphIsVisible: false };
+    return { animatedBlock: false, dialogIsVisible: false, paragraphIsVisible: false, usersAreVisible: false };
   },
   methods: {
+    showUsers() {
+      this.usersAreVisible = true;
+    },
+    hideUsers() {
+      this.usersAreVisible = false;
+    },
     toggleParagraph() {
       this.paragraphIsVisible = !this.paragraphIsVisible;
     },
@@ -98,6 +112,24 @@ export default {
   opacity: 0;
   transform: translateY(30px);
 } */
+
+.fade-button-enter-from,
+.fade-button-leave-to {
+  opacity: 0;
+}
+
+.fade-button-enter-active {
+  transition: opacity 0.3s ease-out;
+}
+
+.fade-button-leave-active {
+  transition: opacity 0.3s ease-in;
+}
+
+.fade-button-enter-to,
+.fade-button-leave-from {
+  opacity: 1;
+}
 
 .animate {
   animation: slide-scale 0.3s ease-out forwards;
