@@ -59,10 +59,20 @@ export default {
     paraBeforeEnter(el) {
       console.log('para before enter');
       console.log(el);
+      el.style.opacity = 0;
     },
-    paraEnter(el) {
+    paraEnter(el, done) {
       console.log('para enter');
       console.log(el);
+      let round = 1;
+      const interval = setInterval(function () {
+        el.style.opacity = round * 0.01;
+        round++;
+        if (round > 100) {
+          clearInterval(interval);
+          done(); // Vue will make sure that the next transition (paraAfterEnter) will be called only after done()
+        }
+      }, 20);
     },
     paraAfterEnter(el) {
       console.log('para after enter');
@@ -71,10 +81,20 @@ export default {
     paraBeforeLeave(el) {
       console.log('para before leave');
       console.log(el);
+      el.style.opacity = 1;
     },
-    paraLeave(el) {
+    paraLeave(el, done) {
       console.log('para leave');
       console.log(el);
+      let round = 1;
+      const interval = setInterval(function () {
+        el.style.opacity = 1 - round * 0.01;
+        round++;
+        if (round > 100) {
+          clearInterval(interval);
+          done(); // Vue will make sure that the next transition (paraAfterEnter) will be called only after done()
+        }
+      }, 20);
     },
     paraAfterLeave(el) {
       console.log('para after leave');
@@ -116,36 +136,6 @@ export default {
   border: 2px solid #ccc;
   border-radius: 12px;
 }
-
-/* .para-enter-from {
-  opacity: 0;
-  transform: translateY(-30px);
-} */
-
-.para-enter-active {
-  /* transition: all 0.3s ease-out; */
-  animation: appearance 0.3s ease-in;
-}
-
-/* .para-enter-to {
-  opacity: 1;
-  transform: translateY(0);
-} */
-
-/* .para-leave-from {
-  opacity: 1;
-  transform: translateY(0);
-} */
-
-.para-leave-active {
-  /* transition: all 0.3s ease-in; */
-  animation: appearance 0.3s ease-out;
-}
-
-/* .para-leave-to {
-  opacity: 0;
-  transform: translateY(30px);
-} */
 
 .fade-button-enter-from,
 .fade-button-leave-to {
