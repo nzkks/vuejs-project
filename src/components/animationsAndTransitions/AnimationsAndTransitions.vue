@@ -6,7 +6,17 @@
 
   <div class="container">
     <!-- Use Vue's Transition element to wrap to achieve the enter/exit animation. Especially exit animation which was not possible because there was no element in the DOM to animate  -->
-    <Transition name="para"> <p v-if="paragraphIsVisible">This is only sometimes visible</p></Transition>
+    <Transition
+      name="para"
+      @before-enter="paraBeforeEnter"
+      @enter="paraEnter"
+      @after-enter="paraAfterEnter"
+      @before-leave="paraBeforeLeave"
+      @leave="paraLeave"
+      @after-leave="paraAfterLeave"
+    >
+      <p v-if="paragraphIsVisible">This is only sometimes visible</p></Transition
+    >
 
     <!-- Instead of using the name attribute, we can also customize the enter and leave classes. So any third party animation classes can be used. -->
     <!-- <Transition enter-active-class="animate" leave-active-class="animate"> <p v-if="paragraphIsVisible">This is only sometimes visible</p></Transition> -->
@@ -45,6 +55,30 @@ export default {
     },
     toggleParagraph() {
       this.paragraphIsVisible = !this.paragraphIsVisible;
+    },
+    paraBeforeEnter(el) {
+      console.log('para before enter');
+      console.log(el);
+    },
+    paraEnter(el) {
+      console.log('para enter');
+      console.log(el);
+    },
+    paraAfterEnter(el) {
+      console.log('para after enter');
+      console.log(el);
+    },
+    paraBeforeLeave(el) {
+      console.log('para before leave');
+      console.log(el);
+    },
+    paraLeave(el) {
+      console.log('para leave');
+      console.log(el);
+    },
+    paraAfterLeave(el) {
+      console.log('para after leave');
+      console.log(el);
     },
     animateBlock() {
       this.animatedBlock = true;
