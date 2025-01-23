@@ -7,7 +7,6 @@
   <div class="container">
     <!-- Use Vue's Transition element to wrap to achieve the enter/exit animation. Especially exit animation which was not possible because there was no element in the DOM to animate  -->
     <Transition
-      name="para"
       @before-enter="paraBeforeEnter"
       @enter="paraEnter"
       @after-enter="paraAfterEnter"
