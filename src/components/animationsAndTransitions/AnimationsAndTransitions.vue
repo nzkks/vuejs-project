@@ -33,6 +33,10 @@
     </transition>
   </div>
 
+  <div class="container">
+    <SuperHero />
+  </div>
+
   <BaseDialogModal @close="hideDialog" :open="dialogIsVisible">
     <p>This is a test dialog!</p>
     <BaseButton @click="hideDialog">Close it!</BaseButton>
@@ -44,7 +48,10 @@
 </template>
 
 <script>
+import SuperHero from './SuperHeros.vue';
+
 export default {
+  components: { SuperHero },
   data() {
     return {
       animatedBlock: false,
