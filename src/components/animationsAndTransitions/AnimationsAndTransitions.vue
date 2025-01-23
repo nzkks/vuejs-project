@@ -14,6 +14,8 @@
       @before-leave="paraBeforeLeave"
       @leave="paraLeave"
       @after-leave="paraAfterLeave"
+      @enter-cancelled="paraEnterCancelled"
+      @leave-cancelled="paraLeaveCancelled"
     >
       <p v-if="paragraphIsVisible">This is only sometimes visible</p></Transition
     >
@@ -44,7 +46,14 @@
 <script>
 export default {
   data() {
-    return { animatedBlock: false, dialogIsVisible: false, paragraphIsVisible: false, usersAreVisible: false };
+    return {
+      animatedBlock: false,
+      dialogIsVisible: false,
+      paragraphIsVisible: false,
+      usersAreVisible: false,
+      enterInterval: null,
+      leaveInterval: null,
+    };
   },
   methods: {
     showUsers() {
@@ -56,6 +65,17 @@ export default {
     toggleParagraph() {
       this.paragraphIsVisible = !this.paragraphIsVisible;
     },
+    // during the entering/exiting transitions, if the transacton gets cancelled, both entering/exiting transactions runs simultaneously which causes flickering. So we need to add enter-cancelled and leave-cancelled event handlers
+    paraEnterCancelled(el) {
+      console.log('para enter cancelled');
+      console.log(el);
+      clearInterval(this.enterInterval);
+    },
+    paraLeaveCancelled(el) {
+      console.log('para leave cancelled');
+      console.log(el);
+      clearInterval(this.leaveInterval);
+    },
     paraBeforeEnter(el) {
       console.log('para before enter');
       console.log(el);
@@ -65,11 +85,11 @@ export default {
       console.log('para enter');
       console.log(el);
       let round = 1;
-      const interval = setInterval(function () {
+      this.enterInterval = setInterval(() => {
         el.style.opacity = round * 0.01;
         round++;
         if (round > 100) {
-          clearInterval(interval);
+          clearInterval(this.enterInterval);
           done(); // Vue will make sure that the next transition (paraAfterEnter) will be called only after done()
         }
       }, 20);
@@ -87,11 +107,11 @@ export default {
       console.log('para leave');
       console.log(el);
       let round = 1;
-      const interval = setInterval(function () {
+      this.leaveInterval = setInterval(() => {
         el.style.opacity = 1 - round * 0.01;
         round++;
         if (round > 100) {
-          clearInterval(interval);
+          clearInterval(this.leaveInterval);
           done(); // Vue will make sure that the next transition (paraAfterEnter) will be called only after done()
         }
       }, 20);
