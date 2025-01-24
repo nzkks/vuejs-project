@@ -2,6 +2,7 @@
   <!-- As you know RouterView is a component that used to render the current route. Usually Transition element is used to wrap a component. But in RouterView case, it is used to wrap the component rendered by RouterView. Also we can use v-slot to wrap the component rendered by RouterView. -->
   <RouterView v-slot="slotProps">
     <!-- mode="out-in" means the exiting component gets the transition first and then the entering component -->
+    <!-- Also important thing to remember: The route component must not have just multiple root elements for the Transition to work. So just wrapping the multiple root elements with a single root element (example: div) is enough -->
     <transition name="fade-route" mode="out-in">
       <!-- Dynamic component -->
       <component :is="slotProps.Component"></component>
