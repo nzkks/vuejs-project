@@ -21,7 +21,8 @@ import BaseButton from './components/ui/BaseButton.vue';
 import BaseCard from './components/ui/BaseCard.vue';
 import BaseDialogModal from './components/ui/BaseDialogModal.vue';
 
-import router from './components/routing/router.js';
+// import router from './components/routing/router.js';
+import router from './components/animationsAndTransitions/router.js';
 
 const app = createApp(App);
 
