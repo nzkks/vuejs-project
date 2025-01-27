@@ -9,10 +9,14 @@
   <!-- <TheForm /> -->
   <!-- <SurveyHome /> -->
   <!-- <RoutingExample /> -->
-  <AnimationsAndTransitions />
+  <!-- <AnimationsAndTransitions /> -->
+
+  <VuexExample />
 </template>
 
 <script>
+import VuexExample from './components/vueX/VuexExample.vue';
+
 // import SurveyHome from './components/survey/SurveyHome.vue';
 
 // import TheForm from './components/advForm/TheForm.vue';
@@ -25,7 +29,7 @@
 
 // import RoutingExample from './components/routing/RoutingExample.vue';
 
-import AnimationsAndTransitions from './components/animationsAndTransitions/AnimationsAndTransitions.vue';
+// import AnimationsAndTransitions from './components/animationsAndTransitions/AnimationsAndTransitions.vue';
 
 export default {
   components: {
@@ -36,8 +40,8 @@ export default {
     // TheForm,
     // SurveyHome,
     // RoutingExample,
-
-    AnimationsAndTransitions,
+    // AnimationsAndTransitions,
+    VuexExample,
   },
 };
 </script>
