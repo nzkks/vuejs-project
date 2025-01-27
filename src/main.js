@@ -1,4 +1,5 @@
 import { createApp } from 'vue';
+import { createStore } from 'vuex';
 
 import App from './App.vue';
 
@@ -25,6 +26,12 @@ import BaseDialogModal from './components/ui/BaseDialogModal.vue';
 // import router from './components/routing/router.js';
 import router from './components/animationsAndTransitions/router.js';
 
+const store = createStore({
+  state() {
+    return {};
+  },
+});
+
 const app = createApp(App);
 
 // app.component('users-wrapper', UsersWrapper);
@@ -48,5 +55,6 @@ app.component('BaseCard', BaseCard);
 app.component('BaseDialogModal', BaseDialogModal);
 
 app.use(router);
+app.use(store);
 
 app.mount('#app');
