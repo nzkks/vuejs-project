@@ -14,7 +14,7 @@ export default {
   components: { BaseContainer, TheCounter },
   methods: {
     addOne() {
-      this.$store.commit('increment');
+      this.$store.dispatch('increment');
     },
     addTen() {
       // this.$store.commit('increaseBy10', { value: 10 });

@@ -33,6 +33,7 @@ const store = createStore({
     };
   },
   mutations: {
+    // Mutations shouldn't be running any asynchronous code. Because mutations are synchronous.
     increment(state) {
       state.counter = state.counter + 1;
     },
@@ -40,6 +41,16 @@ const store = createStore({
       // payload name is arbitrary
       // It can be a string, number, object, array, etc. In this case it is an object with a value property. The name 'value' is also arbitrary.
       state.counter = state.counter + payload.value;
+    },
+  },
+  actions: {
+    // Actions can run the mutations asyncronously
+    // Since the actions are in the middle of the mutations and the components, naming the action the same as the mutation is a good idea. But it can be anything.
+    increment(context) {
+      // example asyncronous code. Typically http requests like data fetching, etc
+      setTimeout(() => {
+        context.commit('increment'); // Here 'increment' refers the actual name of the mutation
+      }, 1000);
     },
   },
   getters: {
