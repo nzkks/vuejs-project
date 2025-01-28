@@ -28,7 +28,9 @@ import router from './components/animationsAndTransitions/router.js';
 
 const store = createStore({
   state() {
-    return {};
+    return {
+      counter: 0,
+    };
   },
 });
 
