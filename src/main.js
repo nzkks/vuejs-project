@@ -30,6 +30,7 @@ const store = createStore({
   state() {
     return {
       counter: 0,
+      isAuthenticated: false,
     };
   },
   mutations: {
@@ -41,6 +42,13 @@ const store = createStore({
       // payload name is arbitrary
       // It can be a string, number, object, array, etc. In this case it is an object with a value property. The name 'value' is also arbitrary.
       state.counter = state.counter + payload.value;
+    },
+    toggleIsAuthenticated(state, payload) {
+      if (payload.isAuth) {
+        state.isAuthenticated = true;
+      } else {
+        state.isAuthenticated = false;
+      }
     },
   },
   actions: {
@@ -55,6 +63,16 @@ const store = createStore({
     increaseBy10(context, payload) {
       setTimeout(() => {
         context.commit('increaseBy10', payload); // Here 'increaseBy10' refers the actual name of the mutation
+      }, 1000);
+    },
+    login(context) {
+      setTimeout(() => {
+        context.commit('toggleIsAuthenticated', { isAuth: true });
+      }, 1000);
+    },
+    logout(context) {
+      setTimeout(() => {
+        context.commit('toggleIsAuthenticated', { isAuth: false });
       }, 1000);
     },
   },
@@ -73,6 +91,9 @@ const store = createStore({
       }
 
       return nCounter;
+    },
+    isAuthenticated(state) {
+      return state.isAuthenticated;
     },
   },
 });

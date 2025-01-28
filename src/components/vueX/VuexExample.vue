@@ -1,5 +1,9 @@
 <template>
-  <BaseContainer title="Vuex">
+  <BaseContainer title="User Auth">
+    <UserAuth />
+  </BaseContainer>
+
+  <BaseContainer title="Vuex" v-if="isAuthenticated">
     <TheCounter />
     <BaseButton @click="inc">Increment</BaseButton>
     <BaseButton @click="increaseBy10({ value: 10 })">Increase by 10</BaseButton>
@@ -7,13 +11,17 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex';
+import { mapActions, mapGetters } from 'vuex';
 
 import BaseContainer from '../ui/BaseContainer.vue';
 import TheCounter from './TheCounter.vue';
+import UserAuth from './UserAuth.vue';
 
 export default {
-  components: { BaseContainer, TheCounter },
+  components: { BaseContainer, TheCounter, UserAuth },
+  computed: {
+    ...mapGetters(['isAuthenticated']),
+  },
   methods: {
     // addOne() {
     //   this.$store.dispatch('increment');
