@@ -26,15 +26,13 @@ import BaseDialogModal from './components/ui/BaseDialogModal.vue';
 // import router from './components/routing/router.js';
 import router from './components/animationsAndTransitions/router.js';
 
-const store = createStore({
+const counterModule = {
   state() {
     return {
       counter: 0,
-      isAuthenticated: false,
     };
   },
   mutations: {
-    // Mutations shouldn't be running any asynchronous code. Because mutations are synchronous.
     increment(state) {
       state.counter = state.counter + 1;
     },
@@ -43,16 +41,8 @@ const store = createStore({
       // It can be a string, number, object, array, etc. In this case it is an object with a value property. The name 'value' is also arbitrary.
       state.counter = state.counter + payload.value;
     },
-    toggleIsAuthenticated(state, payload) {
-      if (payload.isAuth) {
-        state.isAuthenticated = true;
-      } else {
-        state.isAuthenticated = false;
-      }
-    },
   },
   actions: {
-    // Actions can run the mutations asyncronously
     // Since the actions are in the middle of the mutations and the components, naming the action the same as the mutation is a good idea. But it can be anything.
     increment(context) {
       // example asyncronous code. Typically http requests like data fetching, etc
@@ -63,16 +53,6 @@ const store = createStore({
     increaseBy10(context, payload) {
       setTimeout(() => {
         context.commit('increaseBy10', payload); // Here 'increaseBy10' refers the actual name of the mutation
-      }, 1000);
-    },
-    login(context) {
-      setTimeout(() => {
-        context.commit('toggleIsAuthenticated', { isAuth: true });
-      }, 1000);
-    },
-    logout(context) {
-      setTimeout(() => {
-        context.commit('toggleIsAuthenticated', { isAuth: false });
       }, 1000);
     },
   },
@@ -92,6 +72,43 @@ const store = createStore({
 
       return nCounter;
     },
+  },
+};
+
+const store = createStore({
+  modules: {
+    // module name can be anything
+    numbers: counterModule,
+  },
+  state() {
+    return {
+      isAuthenticated: false,
+    };
+  },
+  mutations: {
+    // Mutations shouldn't be running any asynchronous code. Because mutations are synchronous.
+    toggleIsAuthenticated(state, payload) {
+      if (payload.isAuth) {
+        state.isAuthenticated = true;
+      } else {
+        state.isAuthenticated = false;
+      }
+    },
+  },
+  actions: {
+    // Actions can run the mutations asyncronously
+    login(context) {
+      setTimeout(() => {
+        context.commit('toggleIsAuthenticated', { isAuth: true });
+      }, 1000);
+    },
+    logout(context) {
+      setTimeout(() => {
+        context.commit('toggleIsAuthenticated', { isAuth: false });
+      }, 1000);
+    },
+  },
+  getters: {
     isAuthenticated(state) {
       return state.isAuthenticated;
     },
