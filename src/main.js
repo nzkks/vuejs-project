@@ -46,6 +46,18 @@ const store = createStore({
     finalCounter(state) {
       return state.counter * 3;
     },
+    normalizedCounter(state) {
+      const nCounter = state.counter * 3;
+      if (nCounter < 0) {
+        return 0;
+      }
+
+      if (nCounter > 100) {
+        return 100;
+      }
+
+      return nCounter;
+    },
   },
 });
 
