@@ -27,9 +27,9 @@ import BaseDialogModal from './components/ui/BaseDialogModal.vue';
 import router from './components/animationsAndTransitions/router.js';
 
 const counterModule = {
-  // modules have their own local state
-  // Through context parameter, all the methods in actions have access to local getters, state, commit and dispatch along with the getters and state from the root using rootGetters and rootState
-  // Through parameters, all methods in the getters section have access to local state and getters along with the state and getters from root using rootGetters and rootState
+  // modules have their own local state. So all the other properties like getters, mutations and actions are merged into the global object. So modules must have unique names for the getters, mutations and actions to avoid conflicts.
+  // Through context parameter, all the action methods have access to local getters, state, commit and dispatch along with the getters and state from the root using rootGetters and rootState
+  // Through parameters, all the getter methods have access to local state and getters along with the state and getters from root using rootGetters and rootState
   state() {
     return {
       counter: 0,
@@ -64,8 +64,8 @@ const counterModule = {
     finalCounter(state) {
       return state.counter * 3;
     },
-    normalizedCounter(state, getters) {
-      // console.log('getters', getters);
+    normalizedCounter(state, getters, rootState, rootGetters) {
+      console.log({ state, getters, rootState, rootGetters });
       const nCounter = getters.finalCounter;
       if (nCounter < 0) {
         return 0;
