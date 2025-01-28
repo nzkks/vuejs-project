@@ -1,8 +1,8 @@
 <template>
   <BaseContainer title="Vuex">
     <TheCounter />
-    <button @click="inc">Increment</button>
-    <button @click="increaseBy10({ value: 10 })">Increase by 10</button>
+    <BaseButton @click="inc">Increment</BaseButton>
+    <BaseButton @click="increaseBy10({ value: 10 })">Increase by 10</BaseButton>
   </BaseContainer>
 </template>
 
