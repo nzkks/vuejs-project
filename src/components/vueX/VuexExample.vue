@@ -18,7 +18,7 @@ export default {
     },
     addTen() {
       // this.$store.commit('increaseBy10', { value: 10 });
-      this.$store.commit({
+      this.$store.dispatch({
         type: 'increaseBy10', // 'type' property is mandatory as it the name of the mutation. But, of course, 'type' property won't be sent to the store.
         value: 10,
         // there can be any number of other properties

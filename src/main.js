@@ -52,6 +52,11 @@ const store = createStore({
         context.commit('increment'); // Here 'increment' refers the actual name of the mutation
       }, 1000);
     },
+    increaseBy10(context, payload) {
+      setTimeout(() => {
+        context.commit('increaseBy10', payload); // Here 'increaseBy10' refers the actual name of the mutation
+      }, 1000);
+    },
   },
   getters: {
     finalCounter(state) {
