@@ -34,8 +34,8 @@ export default {
     //     // there can be any number of other properties
     //   });
     // },
-    // ...mapActions(['increment', 'increaseBy10']),
-    ...mapActions({
+    // ...mapActions('numbers', ['increment', 'increaseBy10']),
+    ...mapActions('numbers', {
       inc: 'increment',
       increaseBy10: 'increaseBy10',
     }),

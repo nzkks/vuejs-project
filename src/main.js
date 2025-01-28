@@ -30,6 +30,7 @@ const counterModule = {
   // modules have their own local state. So all the other properties like getters, mutations and actions are merged into the global object. So modules must have unique names for the getters, mutations and actions to avoid conflicts.
   // Through context parameter, all the action methods have access to local getters, state, commit and dispatch along with the getters and state from the root using rootGetters and rootState
   // Through parameters, all the getter methods have access to local state and getters along with the state and getters from root using rootGetters and rootState
+  namespaced: true, // If set to true, getters, mutations and actions are scoped to the module. Meaning, it is completely detached from the global store.
   state() {
     return {
       counter: 0,
@@ -82,7 +83,8 @@ const counterModule = {
 
 const store = createStore({
   modules: {
-    // module name can be anything
+    // module name can be anything.
+    // If the module is specified with namespaced: true, then this name is called the namespace. Once namespaced, then all the methods should be called with the namespace mentioned wherever it is used.
     numbers: counterModule,
   },
   state() {
