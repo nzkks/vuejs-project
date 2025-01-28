@@ -1,7 +1,7 @@
 <template>
   <BaseContainer title="Vuex">
     <TheCounter />
-    <button @click="increment">Increment</button>
+    <button @click="inc">Increment</button>
     <button @click="increaseBy10({ value: 10 })">Increase by 10</button>
   </BaseContainer>
 </template>
@@ -26,7 +26,11 @@ export default {
     //     // there can be any number of other properties
     //   });
     // },
-    ...mapActions(['increment', 'increaseBy10']),
+    // ...mapActions(['increment', 'increaseBy10']),
+    ...mapActions({
+      inc: 'increment',
+      increaseBy10: 'increaseBy10',
+    }),
   },
 };
 </script>
