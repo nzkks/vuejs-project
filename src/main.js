@@ -27,6 +27,9 @@ import BaseDialogModal from './components/ui/BaseDialogModal.vue';
 import router from './components/animationsAndTransitions/router.js';
 
 const counterModule = {
+  // modules have their own local state
+  // Through context parameter, all the methods in actions have access to local getters, state, commit and dispatch along with the getters and state from the root using rootGetters and rootState
+  // Through parameters, all methods in the getters section have access to local state and getters along with the state and getters from root using rootGetters and rootState
   state() {
     return {
       counter: 0,
@@ -45,6 +48,7 @@ const counterModule = {
   actions: {
     // Since the actions are in the middle of the mutations and the components, naming the action the same as the mutation is a good idea. But it can be anything.
     increment(context) {
+      // console.log('action context', context);
       // example asyncronous code. Typically http requests like data fetching, etc
       setTimeout(() => {
         context.commit('increment'); // Here 'increment' refers the actual name of the mutation
@@ -61,6 +65,7 @@ const counterModule = {
       return state.counter * 3;
     },
     normalizedCounter(state, getters) {
+      // console.log('getters', getters);
       const nCounter = getters.finalCounter;
       if (nCounter < 0) {
         return 0;
