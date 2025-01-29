@@ -25,7 +25,7 @@ import BaseDialogModal from './components/ui/BaseDialogModal.vue';
 // import router from './components/routing/router.js';
 import router from './components/animationsAndTransitions/router.js';
 
-import store from './store.js';
+import store from './store/index.js';
 
 const app = createApp(App);
 
