@@ -23,7 +23,7 @@ import BaseCard from './components/ui/BaseCard.vue';
 import BaseDialogModal from './components/ui/BaseDialogModal.vue';
 
 // import router from './projects/routing/router.js';
-import router from './projects/animationsAndTransitions/router.js';
+// import router from './projects/animationsAndTransitions/router.js';
 
 import store from './projects/vueX/store/index.js';
 
@@ -49,7 +49,7 @@ app.component('BaseButton', BaseButton);
 app.component('BaseCard', BaseCard);
 app.component('BaseDialogModal', BaseDialogModal);
 
-app.use(router);
+// app.use(router);
 app.use(store);
 
 app.mount('#app');
