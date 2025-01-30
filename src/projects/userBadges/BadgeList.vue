@@ -8,12 +8,14 @@
       <template #default>
         <ul>
           <li>
-            <BaseBadge type="admin" caption="ADMIN" />
+            <BaseBadge mode="admin">ADMIN</BaseBadge>
           </li>
           <li>
-            <BaseBadge type="author" caption="AUTHOR" />
-          </li></ul></template
-    ></BaseCard>
+            <BaseBadge mode="author">AUTHOR</BaseBadge>
+          </li>
+        </ul>
+      </template>
+    </BaseCard>
   </section>
 </template>
 

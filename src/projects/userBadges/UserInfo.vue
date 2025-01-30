@@ -3,7 +3,7 @@
     <BaseCard>
       <template #header>
         <h3>{{ fullName }}</h3>
-        <BaseBadge :type="role" :caption="role.toUpperCase()" />
+        <BaseBadge :mode="role">{{ role.toUpperCase() }}</BaseBadge>
       </template>
 
       <template #default>
