@@ -13,12 +13,11 @@
 <script>
 import { mapActions, mapGetters } from 'vuex';
 
-import BaseContainer from '../ui/BaseContainer.vue';
 import TheCounter from './TheCounter.vue';
 import UserAuth from './UserAuth.vue';
 
 export default {
-  components: { BaseContainer, TheCounter, UserAuth },
+  components: { TheCounter, UserAuth },
   computed: {
     ...mapGetters(['isAuthenticated']),
   },

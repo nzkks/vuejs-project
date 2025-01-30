@@ -5,10 +5,8 @@
 
 <script>
 import { mapActions, mapGetters } from 'vuex';
-import BaseButton from '../ui/BaseButton.vue';
 
 export default {
-  components: { BaseButton },
   methods: {
     ...mapActions(['login', 'logout']),
   },

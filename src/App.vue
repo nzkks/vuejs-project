@@ -15,21 +15,21 @@
 </template>
 
 <script>
-import VuexExample from './components/vueX/VuexExample.vue';
+import VuexExample from './projects/vueX/VuexExample.vue';
 
-// import SurveyHome from './components/survey/SurveyHome.vue';
+// import SurveyHome from './projects/survey/SurveyHome.vue';
 
-// import TheForm from './components/advForm/TheForm.vue';
-// import LearningResources from './components/learningResources/LearningResources.vue';
+// import TheForm from './projects/advForm/TheForm.vue';
+// import LearningResources from './projects/learningResources/LearningResources.vue';
 
-// import DynamicComponents from './components/dynamicComponents/DynamicComponents.vue';
-// import SampleForm from './components/teleport/SampleForm.vue';
+// import DynamicComponents from './projects/dynamicComponents/DynamicComponents.vue';
+// import SampleForm from './projects/teleport/SampleForm.vue';
 
-// import UserBadges from './components/userBadges/UserBadges.vue';
+// import UserBadges from './projects/userBadges/UserBadges.vue';
 
-// import RoutingExample from './components/routing/RoutingExample.vue';
+// import RoutingExample from './projects/routing/RoutingExample.vue';
 
-// import AnimationsAndTransitions from './components/animationsAndTransitions/AnimationsAndTransitions.vue';
+// import AnimationsAndTransitions from './projects/animationsAndTransitions/AnimationsAndTransitions.vue';
 
 export default {
   components: {

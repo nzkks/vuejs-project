@@ -2,19 +2,19 @@ import { createApp } from 'vue';
 
 import App from './App.vue';
 
-// import FriendContacts from './components/friends/FriendContacts.vue';
-// import FriendContact from './components/friends/FriendContact.vue';
-// import CreateFriendContact from './components/friends/CreateFriendContact.vue';
+// import FriendContacts from './projects/friends/FriendContacts.vue';
+// import FriendContact from './projects/friends/FriendContact.vue';
+// import CreateFriendContact from './projects/friends/CreateFriendContact.vue';
 
-// import UsersWrapper from './components/users/UsersWrapper.vue';
-// import UserData from './components/users/UserData.vue';
-// import ActiveUser from './components/users/ActiveUser.vue';
+// import UsersWrapper from './projects/users/UsersWrapper.vue';
+// import UserData from './projects/users/UserData.vue';
+// import ActiveUser from './projects/users/ActiveUser.vue';
 
-// import KnowledgeTopics from './components/topics/KnowledgeTopics.vue';
-// import ActiveElement from './components/topics/ActiveElement.vue';
-// import KnowledgeBase from './components/topics/KnowledgeBase.vue';
-// import KnowledgeElement from './components/topics/KnowledgeElement.vue';
-// import KnowledgeGrid from './components/topics/KnowledgeGrid.vue';
+// import KnowledgeTopics from './projects/topics/KnowledgeTopics.vue';
+// import ActiveElement from './projects/topics/ActiveElement.vue';
+// import KnowledgeBase from './projects/topics/KnowledgeBase.vue';
+// import KnowledgeElement from './projects/topics/KnowledgeElement.vue';
+// import KnowledgeGrid from './projects/topics/KnowledgeGrid.vue';
 
 import BaseContainer from './components/ui/BaseContainer.vue';
 import BaseBadge from './components/ui/BaseBadge.vue';
@@ -22,10 +22,10 @@ import BaseButton from './components/ui/BaseButton.vue';
 import BaseCard from './components/ui/BaseCard.vue';
 import BaseDialogModal from './components/ui/BaseDialogModal.vue';
 
-// import router from './components/routing/router.js';
-import router from './components/animationsAndTransitions/router.js';
+// import router from './projects/routing/router.js';
+import router from './projects/animationsAndTransitions/router.js';
 
-import store from './store/index.js';
+import store from './projects/vueX/store/index.js';
 
 const app = createApp(App);
 
