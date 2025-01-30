@@ -10,12 +10,15 @@
   <!-- <SurveyHome /> -->
   <!-- <RoutingExample /> -->
   <!-- <AnimationsAndTransitions /> -->
+  <!-- <VuexExample /> -->
 
-  <VuexExample />
+  <MiniShop />
 </template>
 
 <script>
-import VuexExample from './projects/vueX/VuexExample.vue';
+import MiniShop from './projects/miniShop/MiniShop.vue';
+
+// import VuexExample from './projects/vueX/VuexExample.vue';
 
 // import SurveyHome from './projects/survey/SurveyHome.vue';
 
@@ -33,6 +36,7 @@ import VuexExample from './projects/vueX/VuexExample.vue';
 
 export default {
   components: {
+    MiniShop,
     // UserBadges
     // DynamicComponents,
     // SampleForm,
@@ -41,7 +45,7 @@ export default {
     // SurveyHome,
     // RoutingExample,
     // AnimationsAndTransitions,
-    VuexExample,
+    // VuexExample,
   },
 };
 </script>
