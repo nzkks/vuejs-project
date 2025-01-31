@@ -2,10 +2,10 @@ export default {
   addProduct(state, payload) {
     const { productData } = payload;
 
-    const productInCartIndex = state.cart.items.findIndex(ci => ci.productId === productData.id);
+    const productInCartIndex = state.items.findIndex(ci => ci.productId === productData.id);
 
     if (productInCartIndex >= 0) {
-      state.cart.items[productInCartIndex].qty++;
+      state.items[productInCartIndex].qty++;
     } else {
       const newItem = {
         productId: productData.id,
@@ -14,19 +14,19 @@ export default {
         price: productData.price,
         qty: 1,
       };
-      state.cart.items.push(newItem);
+      state.items.push(newItem);
     }
-    state.cart.qty++;
-    state.cart.total += productData.price;
+    state.qty++;
+    state.total += productData.price;
   },
 
   removeProduct(state, payload) {
     const { prodId } = payload;
 
-    const productInCartIndex = state.cart.items.findIndex(cartItem => cartItem.productId === prodId);
-    const prodData = state.cart.items[productInCartIndex];
-    state.cart.items.splice(productInCartIndex, 1);
-    state.cart.qty -= prodData.qty;
-    state.cart.total -= prodData.price * prodData.qty;
+    const productInCartIndex = state.items.findIndex(cartItem => cartItem.productId === prodId);
+    const prodData = state.items[productInCartIndex];
+    state.items.splice(productInCartIndex, 1);
+    state.qty -= prodData.qty;
+    state.total -= prodData.price * prodData.qty;
   },
 };
