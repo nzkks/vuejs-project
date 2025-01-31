@@ -4,7 +4,12 @@ import rootMutations from './rootMutations';
 import rootActions from './rootActions';
 import rootGetters from './rootGetters';
 
+import cartModule from './modules/cart/index';
+
 export default createStore({
+  modules: {
+    cart: cartModule,
+  },
   state() {
     return {
       isLoggedIn: false,

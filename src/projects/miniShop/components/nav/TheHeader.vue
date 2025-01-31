@@ -28,9 +28,9 @@
 import { mapGetters, mapActions } from 'vuex';
 
 export default {
-  inject: ['cart'],
   computed: {
     ...mapGetters(['isLoggedIn']),
+    ...mapGetters('cart', ['cart']),
   },
   methods: {
     ...mapActions(['login', 'logout']),
