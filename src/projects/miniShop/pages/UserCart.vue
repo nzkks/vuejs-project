@@ -28,10 +28,7 @@ export default {
     CartItem,
   },
   computed: {
-    ...mapGetters('cart', ['cart']),
-    cartTotal() {
-      return this.cart.total.toFixed(2);
-    },
+    ...mapGetters('cart', ['cart', 'cartTotal']),
   },
 };
 </script>
