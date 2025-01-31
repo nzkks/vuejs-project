@@ -27,6 +27,7 @@ import BaseDialogModal from './components/ui/BaseDialogModal.vue';
 import router from './projects/miniShop/router.js';
 
 // import store from './projects/vueX/store/index.js';
+import store from './projects/miniShop/store/index.js';
 
 const app = createApp(App);
 
@@ -51,6 +52,6 @@ app.component('BaseCard', BaseCard);
 app.component('BaseDialogModal', BaseDialogModal);
 
 app.use(router);
-// app.use(store);
+app.use(store);
 
 app.mount('#app');

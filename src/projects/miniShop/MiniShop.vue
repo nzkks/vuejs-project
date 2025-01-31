@@ -13,20 +13,16 @@ export default {
   },
   data() {
     return {
-      isLoggedIn: false,
       products,
       cart: { items: [], total: 0, qty: 0 },
     };
   },
   provide() {
     return {
-      isLoggedIn: this.isLoggedIn,
       products: this.products,
       cart: this.cart,
       addProductToCart: this.addProductToCart,
       removeProductFromCart: this.removeProductFromCart,
-      login: this.login,
-      logout: this.logout,
     };
   },
   methods: {
@@ -55,12 +51,6 @@ export default {
       this.cart.items.splice(productInCartIndex, 1);
       this.cart.qty -= prodData.qty;
       this.cart.total -= prodData.price * prodData.qty;
-    },
-    login() {
-      this.isLoggedIn = true;
-    },
-    logout() {
-      this.isLoggedIn = false;
     },
   },
 };
