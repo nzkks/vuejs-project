@@ -11,12 +11,14 @@
   <!-- <RoutingExample /> -->
   <!-- <AnimationsAndTransitions /> -->
   <!-- <VuexExample /> -->
-
-  <MiniShop />
+  <!-- <MiniShop /> -->
+  <CompositionBasic />
 </template>
 
 <script>
-import MiniShop from './projects/miniShop/MiniShop.vue';
+import CompositionBasic from './projects/compositionBasic/CompositionBasic.vue';
+
+// import MiniShop from './projects/miniShop/MiniShop.vue';
 
 // import VuexExample from './projects/vueX/VuexExample.vue';
 
@@ -36,7 +38,8 @@ import MiniShop from './projects/miniShop/MiniShop.vue';
 
 export default {
   components: {
-    MiniShop,
+    CompositionBasic,
+    // MiniShop,
     // UserBadges
     // DynamicComponents,
     // SampleForm,
