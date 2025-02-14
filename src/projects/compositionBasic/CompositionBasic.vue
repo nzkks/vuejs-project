@@ -4,27 +4,14 @@
   </section>
 </template>
 
-<script>
+<script setup>
 import { ref } from 'vue';
 
-export default {
-  // setup method just runs once
-  setup() {
-    const uName = ref('NZKKS'); // reactive value
-    // const uName = 'NZKKS'; // normal variable (non-reactive)
+const userName = ref('NZKKS');
 
-    setTimeout(() => {
-      uName.value = 'NZKKS!!!';
-    }, 1000);
-
-    return { userName: uName };
-  },
-  // data() {
-  //   return {
-  //     userName: 'NZKKS',
-  //   };
-  // },
-};
+setTimeout(() => {
+  userName.value = 'NZKKS!!!';
+}, 1000);
 </script>
 
 <style>
