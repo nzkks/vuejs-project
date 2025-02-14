@@ -1,15 +1,6 @@
-<template>
-  <section class="container">
-    <h2>{{ user.name }}</h2>
-    <h3>{{ user.age }}</h3>
-  </section>
-</template>
-
 <script setup>
 import { ref } from 'vue';
 
-// const userName = ref('NZKKS');
-// const userAge = ref(30);
 const user = ref({
   name: 'NZKKS',
   age: 30,
@@ -20,6 +11,13 @@ setTimeout(() => {
   user.value.age = 31;
 }, 1500);
 </script>
+
+<template>
+  <section class="container">
+    <h2>{{ user.name }}</h2>
+    <h3>{{ user.age }}</h3>
+  </section>
+</template>
 
 <style>
 * {
