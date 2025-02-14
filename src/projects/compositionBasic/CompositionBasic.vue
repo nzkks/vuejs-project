@@ -1,12 +1,8 @@
 <script setup>
-// import { ref } from 'vue';
-import { reactive } from 'vue';
+import { reactive, ref } from 'vue';
 
 // ref works with all data type string, number, boolean, object, array etc.
-// const user = ref({
-//   name: 'NZKKS',
-//   age: 30,
-// });
+const greeting = ref('Hello');
 
 // reactive works only on object
 const user = reactive({
@@ -14,21 +10,18 @@ const user = reactive({
   age: 30,
 });
 
-setTimeout(() => {
-  // ref has the Proxy (value) wrapper
-  // user.value.name = 'NZKKS!!!';
-  // user.value.age = 31;
-
-  // reactive doesn't have the Proxy (value) wrapper. so it is simplified
+const changeUserValues = () => {
+  greeting.value = 'Hi';
   user.name = 'NZKKS!!!';
   user.age = 31;
-}, 1500);
+};
 </script>
 
 <template>
   <section class="container">
-    <h2>{{ user.name }}</h2>
+    <h2>{{ greeting }} {{ user.name }}</h2>
     <h3>{{ user.age }}</h3>
+    <base-button @click="changeUserValues">Change User Values</base-button>
   </section>
 </template>
 
