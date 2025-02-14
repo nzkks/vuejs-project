@@ -1,14 +1,27 @@
 <script setup>
-import { ref } from 'vue';
+// import { ref } from 'vue';
+import { reactive } from 'vue';
 
-const user = ref({
+// ref works with all data type string, number, boolean, object, array etc.
+// const user = ref({
+//   name: 'NZKKS',
+//   age: 30,
+// });
+
+// reactive works only on object
+const user = reactive({
   name: 'NZKKS',
   age: 30,
 });
 
 setTimeout(() => {
-  user.value.name = 'NZKKS!!!';
-  user.value.age = 31;
+  // ref has the Proxy (value) wrapper
+  // user.value.name = 'NZKKS!!!';
+  // user.value.age = 31;
+
+  // reactive doesn't have the Proxy (value) wrapper. so it is simplified
+  user.name = 'NZKKS!!!';
+  user.age = 31;
 }, 1500);
 </script>
 
