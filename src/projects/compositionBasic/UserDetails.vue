@@ -1,15 +1,16 @@
 <script>
+import { computed } from 'vue';
+
 export default {
   props: ['firstName', 'lastName', 'age'],
-  computed: {
-    fullName() {
-      return this.firstName + ' ' + this.lastName;
-    },
+  setup(props) {
+    const fullName = computed(() => `${props.firstName} ${props.lastName}`);
+    return { userName: fullName };
   },
 };
 </script>
 
 <template>
-  <h2>Hello {{ fullName }}</h2>
+  <h2>Hello {{ userName }}</h2>
   <h3>{{ age }}</h3>
 </template>
