@@ -18,13 +18,14 @@ const changeUserValues = () => {
   user.age = 31;
 };
 
-const setFirstName = event => {
-  firstName.value = event.target.value;
-};
+// No more manual binding
+// const setFirstName = event => {
+//   firstName.value = event.target.value;
+// };
 
-const setLastName = event => {
-  lastName.value = event.target.value;
-};
+// const setLastName = event => {
+//   lastName.value = event.target.value;
+// };
 </script>
 
 <template>
@@ -35,11 +36,12 @@ const setLastName = event => {
     <div class="inputContainer">
       <div>
         <label for="firstName">First Name</label
-        ><input type="text" id="firstName" name="firstName" placeholder="First Name" @input="setFirstName" />
+        ><input type="text" id="firstName" name="firstName" placeholder="First Name" v-model="firstName" />
+        <!--v-model is for two-way binding -->
       </div>
       <div>
         <label for="lastName">Last Name</label
-        ><input type="text" id="lastName" name="lastName" placeholder="Last Name" @input="setLastName" />
+        ><input type="text" id="lastName" name="lastName" placeholder="Last Name" v-model="lastName" />
       </div>
     </div>
   </section>
