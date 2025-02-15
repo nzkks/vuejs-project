@@ -4,12 +4,15 @@ import { ref, computed, watch } from 'vue';
 // data
 const firstName = ref('');
 const lastName = ref('');
+const lastNameInput = ref(null);
 const age = ref(30);
 
 // computed
 const fullName = computed(() => `${firstName.value} ${lastName.value}`);
 
 // methods
+const setLastName = () => (lastName.value = lastNameInput.value.value); // first .value is the value of the ref (input), second .value is the value property of the input element object
+
 const setNewAge = () => (age.value += 1);
 
 // watch
@@ -31,9 +34,10 @@ watch([age, fullName], (newValues, oldValues) => {
       </div>
       <div>
         <label for="lastName">Last Name</label
-        ><input type="text" id="lastName" name="lastName" placeholder="Last Name" v-model="lastName" />
+        ><input type="text" id="lastName" name="lastName" placeholder="Last Name" ref="lastNameInput" />
       </div>
     </div>
+    <base-button @click="setLastName">Set Last Name</base-button>
   </section>
 </template>
 
@@ -61,6 +65,7 @@ body {
 
 .inputContainer {
   margin-top: 1rem;
+  margin-bottom: 1rem;
   display: flex;
   gap: 1rem;
 }
