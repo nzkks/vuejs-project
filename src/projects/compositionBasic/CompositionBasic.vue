@@ -1,5 +1,5 @@
 <script setup>
-import { ref, watch } from 'vue';
+import { ref, watch, provide } from 'vue';
 
 import UserDetails from './UserDetails.vue';
 
@@ -22,11 +22,14 @@ watch([age, lastName], (newValues, oldValues) => {
   console.log('Age changed from ' + oldValues[0] + ' to ' + newValues[0]);
   console.log('Last Name changed from ' + oldValues[1] + ' to ' + newValues[1]);
 });
+
+// provide
+provide('userAge', age);
 </script>
 
 <template>
   <section class="container">
-    <UserDetails :firstName="firstName" :lastName="lastName" :age="age" />
+    <UserDetails :firstName="firstName" :lastName="lastName" />
     <base-button @click="setNewAge">Set New Age</base-button>
     <div class="inputContainer">
       <div>

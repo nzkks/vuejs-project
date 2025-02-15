@@ -1,15 +1,17 @@
 <script>
-import { computed } from 'vue';
+import { computed, inject } from 'vue';
 
 export default {
-  props: ['firstName', 'lastName', 'age'],
+  props: ['firstName', 'lastName'],
   setup(props, context) {
     const fullName = computed(() => `${props.firstName} ${props.lastName}`);
 
     console.log(context); // attrs, emit, expose, slots
     context.emit('set-title', fullName.value);
 
-    return { userName: fullName };
+    const age = inject('userAge');
+
+    return { userName: fullName, age };
   },
 };
 </script>
