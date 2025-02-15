@@ -1,30 +1,22 @@
-<script>
-export default {
-  data() {
-    return {
-      availableFunds: 100,
-      currentExpenses: 0,
-      enteredExpense: 0,
-    };
-  },
-  computed: {
-    remainingFunds() {
-      return this.availableFunds - this.currentExpenses;
-    },
-  },
-  methods: {
-    addExpense() {
-      this.currentExpenses += this.enteredExpense;
-    },
-  },
-  watch: {
-    remainingFunds(val) {
-      if (val < 0) {
-        alert('You are broke!');
-      }
-    },
-  },
-};
+<script setup>
+import { ref, computed, watch } from 'vue';
+// data
+const availableFunds = ref(100);
+const currentExpenses = ref(0);
+const enteredExpense = ref(0);
+
+// computed
+const remainingFunds = computed(() => availableFunds.value - currentExpenses.value);
+
+// methods
+const addExpense = () => (currentExpenses.value += enteredExpense.value);
+
+// watch
+watch(remainingFunds, newValue => {
+  if (newValue < 0) {
+    alert('You are broke!');
+  }
+});
 </script>
 
 <template>
