@@ -3,8 +3,12 @@ import { computed } from 'vue';
 
 export default {
   props: ['firstName', 'lastName', 'age'],
-  setup(props) {
+  setup(props, context) {
     const fullName = computed(() => `${props.firstName} ${props.lastName}`);
+
+    console.log(context); // attrs, emit, expose, slots
+    context.emit('set-title', fullName.value);
+
     return { userName: fullName };
   },
 };
