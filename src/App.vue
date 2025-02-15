@@ -12,16 +12,16 @@
   <!-- <AnimationsAndTransitions /> -->
   <!-- <VuexExample /> -->
   <!-- <MiniShop /> -->
-  <!-- <CompositionBasic /> -->
+  <CompositionBasic />
   <!-- <CourseGoalsOptionsAPI /> -->
-  <CourseGoalsCompositionAPI />
+  <!-- <CourseGoalsCompositionAPI /> -->
 </template>
 
 <script>
-import CourseGoalsCompositionAPI from './projects/compositionBasic/CourseGoalsCompositionAPI.vue';
+// import CourseGoalsCompositionAPI from './projects/compositionBasic/CourseGoalsCompositionAPI.vue';
 // import CourseGoalsOptionsAPI from './projects/compositionBasic/CourseGoalsOptionsAPI.vue';
 
-// import CompositionBasic from './projects/compositionBasic/CompositionBasic.vue';
+import CompositionBasic from './projects/compositionBasic/CompositionBasic.vue';
 
 // import MiniShop from './projects/miniShop/MiniShop.vue';
 
@@ -43,9 +43,9 @@ import CourseGoalsCompositionAPI from './projects/compositionBasic/CourseGoalsCo
 
 export default {
   components: {
-    CourseGoalsCompositionAPI,
+    // CourseGoalsCompositionAPI,
     // CourseGoalsOptionsAPI,
-    // CompositionBasic,
+    CompositionBasic,
     // MiniShop,
     // UserBadges
     // DynamicComponents,
