@@ -13,8 +13,9 @@ const fullName = computed(() => `${firstName.value} ${lastName.value}`);
 const setNewAge = () => (age.value += 1);
 
 // watch
-watch(age, (newValue, oldValue) => {
-  console.log('Age changed from ' + oldValue + ' to ' + newValue);
+watch([age, fullName], (newValues, oldValues) => {
+  console.log('Age changed from ' + oldValues[0] + ' to ' + newValues[0]);
+  console.log('FullName changed from ' + oldValues[1] + ' to ' + newValues[1]);
 });
 </script>
 
