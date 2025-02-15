@@ -1,12 +1,10 @@
 <script setup>
 import { reactive, ref, computed } from 'vue';
 
-// ref works with all data type string, number, boolean, object, array etc.
 const greeting = ref('Hello');
 const firstName = ref('');
 const lastName = ref('');
 
-// reactive works only on object
 const user = reactive({
   name: computed(() => `${firstName.value} ${lastName.value}`),
   age: 30,
@@ -14,18 +12,9 @@ const user = reactive({
 
 const changeUserValues = () => {
   greeting.value = 'Hi';
-  user.name = 'NZKKS!!!';
+  user.name = 'NZKKS!!!'; // computed property can't be changed. So this won't work and anything below this line will be ignored
   user.age = 31;
 };
-
-// No more manual binding
-// const setFirstName = event => {
-//   firstName.value = event.target.value;
-// };
-
-// const setLastName = event => {
-//   lastName.value = event.target.value;
-// };
 </script>
 
 <template>
@@ -37,7 +26,6 @@ const changeUserValues = () => {
       <div>
         <label for="firstName">First Name</label
         ><input type="text" id="firstName" name="firstName" placeholder="First Name" v-model="firstName" />
-        <!--v-model is for two-way binding -->
       </div>
       <div>
         <label for="lastName">Last Name</label
