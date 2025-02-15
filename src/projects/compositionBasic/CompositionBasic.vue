@@ -1,5 +1,7 @@
 <script setup>
-import { ref, computed, watch } from 'vue';
+import { ref, watch } from 'vue';
+
+import UserDetails from './UserDetails.vue';
 
 // data
 const firstName = ref('');
@@ -8,7 +10,7 @@ const lastNameInput = ref(null);
 const age = ref(30);
 
 // computed
-const fullName = computed(() => `${firstName.value} ${lastName.value}`);
+// const fullName = computed(() => `${firstName.value} ${lastName.value}`);
 
 // methods
 const setLastName = () => (lastName.value = lastNameInput.value.value); // first .value is the value of the ref (input), second .value is the value property of the input element object
@@ -16,16 +18,15 @@ const setLastName = () => (lastName.value = lastNameInput.value.value); // first
 const setNewAge = () => (age.value += 1);
 
 // watch
-watch([age, fullName], (newValues, oldValues) => {
+watch([age, lastName], (newValues, oldValues) => {
   console.log('Age changed from ' + oldValues[0] + ' to ' + newValues[0]);
-  console.log('FullName changed from ' + oldValues[1] + ' to ' + newValues[1]);
+  console.log('Last Name changed from ' + oldValues[1] + ' to ' + newValues[1]);
 });
 </script>
 
 <template>
   <section class="container">
-    <h2>Hello {{ fullName }}</h2>
-    <h3>{{ age }}</h3>
+    <UserDetails :firstName="firstName" :lastName="lastName" :age="age" />
     <base-button @click="setNewAge">Set New Age</base-button>
     <div class="inputContainer">
       <div>
