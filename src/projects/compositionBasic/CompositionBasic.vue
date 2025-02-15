@@ -1,27 +1,23 @@
 <script setup>
-import { reactive, ref, computed } from 'vue';
+import { ref, computed } from 'vue';
 
-const greeting = ref('Hello');
+// data
 const firstName = ref('');
 const lastName = ref('');
+const age = ref(30);
 
-const user = reactive({
-  name: computed(() => `${firstName.value} ${lastName.value}`),
-  age: 30,
-});
+// computed
+const fullName = computed(() => `${firstName.value} ${lastName.value}`);
 
-const changeUserValues = () => {
-  greeting.value = 'Hi';
-  user.name = 'NZKKS!!!'; // computed property can't be changed. So this won't work and anything below this line will be ignored
-  user.age = 31;
-};
+// methods
+const setNewAge = () => (age.value += 1);
 </script>
 
 <template>
   <section class="container">
-    <h2>{{ greeting }} {{ user.name }}</h2>
-    <h3>{{ user.age }}</h3>
-    <base-button @click="changeUserValues">Change User Values</base-button>
+    <h2>Hello {{ fullName }}</h2>
+    <h3>{{ age }}</h3>
+    <base-button @click="setNewAge">Set New Age</base-button>
     <div class="inputContainer">
       <div>
         <label for="firstName">First Name</label
