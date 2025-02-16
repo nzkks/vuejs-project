@@ -16,6 +16,7 @@ import App from './App.vue';
 // import KnowledgeElement from './projects/topics/KnowledgeElement.vue';
 // import KnowledgeGrid from './projects/topics/KnowledgeGrid.vue';
 
+import BaseHeader from './components/layout/BaseHeader.vue';
 import BaseContainer from './components/ui/BaseContainer.vue';
 import BaseBadge from './components/ui/BaseBadge.vue';
 import BaseButton from './components/ui/BaseButton.vue';
@@ -46,6 +47,7 @@ const app = createApp(App);
 // app.component('knowledge-element', KnowledgeElement);
 // app.component('knowledge-grid', KnowledgeGrid);
 
+app.component('base-header', BaseHeader);
 app.component('BaseContainer', BaseContainer);
 app.component('BaseBadge', BaseBadge);
 app.component('BaseButton', BaseButton);

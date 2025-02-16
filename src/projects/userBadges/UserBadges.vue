@@ -12,13 +12,12 @@
 </template>
 
 <script>
-import BaseHeader from '../../components/layout/BaseHeader.vue';
 import UserInfo from './UserInfo.vue';
 import BadgeList from './BadgeList.vue';
 import CourseGoals from './CourseGoals.vue';
 
 export default {
-  components: { BadgeList, CourseGoals, BaseHeader, UserInfo },
+  components: { BadgeList, CourseGoals, UserInfo },
   data() {
     return {
       activeUser: {
