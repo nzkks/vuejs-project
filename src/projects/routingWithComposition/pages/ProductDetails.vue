@@ -9,13 +9,14 @@
 
 <script>
 import { inject, computed } from 'vue';
+import { useRoute } from 'vue-router';
 
 export default {
-  props: ['pid'],
-  setup(props) {
+  setup() {
     const products = inject('products');
 
-    const selectedProduct = computed(() => products.value.find(prod => prod.id === props.pid));
+    const route = useRoute(); // custom composition function/hook to get all the route information
+    const selectedProduct = computed(() => products.value.find(prod => prod.id === route.params.pid));
 
     // computed is also a ref object. So use 'value' to extract the value
     const title = computed(() => selectedProduct.value.title);
