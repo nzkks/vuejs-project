@@ -1,6 +1,7 @@
 <script>
 export default {
   props: ['id', 'userName'],
+  emits: ['list-projects'],
   setup(props, context) {
     const viewProjects = () => {
       context.emit('list-projects', props.id);

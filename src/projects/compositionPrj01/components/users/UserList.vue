@@ -8,10 +8,10 @@ export default {
     UserItem,
   },
   props: ['users'],
+  emits: ['list-projects'],
   setup(props) {
     const enteredSearchTerm = ref('');
     const activeSearchTerm = ref('');
-    const sorting = ref(null);
 
     const availableUsers = computed(() => {
       let users = [];
@@ -22,6 +22,20 @@ export default {
       }
       return users;
     });
+
+    watch(enteredSearchTerm, val => {
+      setTimeout(() => {
+        if (val === enteredSearchTerm.value) {
+          activeSearchTerm.value = val;
+        }
+      }, 300);
+    });
+
+    const updateSearch = val => {
+      enteredSearchTerm.value = val;
+    };
+
+    const sorting = ref(null);
 
     const displayedUsers = computed(() => {
       if (!sorting.value) {
@@ -41,21 +55,9 @@ export default {
       });
     });
 
-    const updateSearch = val => {
-      enteredSearchTerm.value = val;
-    };
-
     const sort = mode => {
       sorting.value = mode;
     };
-
-    watch(enteredSearchTerm, val => {
-      setTimeout(() => {
-        if (val === enteredSearchTerm.value) {
-          activeSearchTerm.value = val;
-        }
-      }, 300);
-    });
 
     return { enteredSearchTerm, sorting, displayedUsers, updateSearch, sort };
   },

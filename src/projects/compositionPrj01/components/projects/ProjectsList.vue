@@ -23,10 +23,6 @@ export default {
       return props.user.projects && availableProjects.value.length > 0;
     });
 
-    const updateSearch = val => {
-      enteredSearchTerm.value = val;
-    };
-
     watch(enteredSearchTerm, val => {
       setTimeout(() => {
         if (val === enteredSearchTerm.value) {
@@ -39,6 +35,10 @@ export default {
     watch(user, () => {
       enteredSearchTerm.value = '';
     });
+
+    const updateSearch = val => {
+      enteredSearchTerm.value = val;
+    };
 
     return {
       enteredSearchTerm,
