@@ -3,25 +3,27 @@
     <h2>{{ title }}</h2>
     <h3>${{ price }}</h3>
     <p>{{ description }}</p>
+    <router-link to="/products/p2">Product 2</router-link>
   </section>
 </template>
 
 <script>
-import { inject } from 'vue';
+import { inject, computed } from 'vue';
 
 export default {
   props: ['pid'],
   setup(props) {
     const products = inject('products');
 
-    // const { title, price, description } = products.value.find(prod => prod.id === props.pid); // simple way
+    const selectedProduct = computed(() => products.value.find(prod => prod.id === props.pid));
 
-    const selectedProduct = products.value.find(prod => prod.id === props.pid);
+    // computed is also a ref object. So use 'value' to extract the value
+    const title = computed(() => selectedProduct.value.title);
+    const price = computed(() => selectedProduct.value.price);
+    const description = computed(() => selectedProduct.value.description);
 
-    const title = selectedProduct.title;
-    const price = selectedProduct.price;
-    const description = selectedProduct.description;
-
+    // return { title: title.value, price: price.value, description: description.value };
+    // OR simply below
     return { title, price, description };
   },
 };
