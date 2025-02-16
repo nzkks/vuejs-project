@@ -27,6 +27,7 @@ import BaseSearch from './components/ui/BaseSearch.vue';
 // import router from './projects/routing/router.js';
 // import router from './projects/animationsAndTransitions/router.js';
 // import router from './projects/miniShop/router.js';
+import router from './projects/routingWithComposition/router.js';
 
 // import store from './projects/vueX/store/index.js';
 // import store from './projects/miniShop/store/index.js';
@@ -55,7 +56,7 @@ app.component('BaseCard', BaseCard);
 app.component('BaseDialogModal', BaseDialogModal);
 app.component('BaseSearch', BaseSearch);
 
-// app.use(router);
+app.use(router);
 // app.use(store);
 
 app.mount('#app');

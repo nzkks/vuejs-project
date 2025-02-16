@@ -16,12 +16,14 @@
   <!-- <CourseGoalsOptionsAPI /> -->
   <!-- <CourseGoalsCompositionAPI /> -->
   <!-- <BasicExpenseTracker /> -->
-
-  <CompositionPrj01 />
+  <!-- <CompositionPrj01 /> -->
+  <RoutingWithComposition />
 </template>
 
 <script>
-import CompositionPrj01 from './projects/compositionPrj01/CompositionPrj01.vue';
+import RoutingWithComposition from './projects/routingWithComposition/RoutingWithComposition.vue';
+
+// import CompositionPrj01 from './projects/compositionPrj01/CompositionPrj01.vue';
 
 // import BasicExpenseTracker from './projects/compositionBasic/BasicExpenseTracker.vue';
 // import CourseGoalsCompositionAPI from './projects/compositionBasic/CourseGoalsCompositionAPI.vue';
@@ -49,7 +51,8 @@ import CompositionPrj01 from './projects/compositionPrj01/CompositionPrj01.vue';
 
 export default {
   components: {
-    CompositionPrj01,
+    RoutingWithComposition,
+    // CompositionPrj01,
     // BasicExpenseTracker,
     // CourseGoalsCompositionAPI,
     // CourseGoalsOptionsAPI,
