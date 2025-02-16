@@ -21,6 +21,7 @@ import BaseBadge from './components/ui/BaseBadge.vue';
 import BaseButton from './components/ui/BaseButton.vue';
 import BaseCard from './components/ui/BaseCard.vue';
 import BaseDialogModal from './components/ui/BaseDialogModal.vue';
+import BaseSearch from './components/ui/BaseSearch.vue';
 
 // import router from './projects/routing/router.js';
 // import router from './projects/animationsAndTransitions/router.js';
@@ -50,6 +51,7 @@ app.component('BaseBadge', BaseBadge);
 app.component('BaseButton', BaseButton);
 app.component('BaseCard', BaseCard);
 app.component('BaseDialogModal', BaseDialogModal);
+app.component('BaseSearch', BaseSearch);
 
 // app.use(router);
 // app.use(store);
