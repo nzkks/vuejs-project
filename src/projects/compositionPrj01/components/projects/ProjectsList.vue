@@ -21,7 +21,8 @@ export default {
     });
 
     watch(user, () => {
-      enteredSearchTerm.value = '';
+      // enteredSearchTerm.value = ''; // since enteredSearchTerm is not a ref spcified within this component, updating the value from here is not good.
+      updateSearch('');
     });
 
     return {
