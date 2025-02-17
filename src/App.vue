@@ -16,20 +16,20 @@
   <!-- <CourseGoalsOptionsAPI /> -->
   <!-- <CourseGoalsCompositionAPI /> -->
   <!-- <BasicExpenseTracker /> -->
-  <!-- <CompositionPrj01 /> -->
+  <CompositionPrj01 />
   <!-- <RoutingWithComposition /> -->
   <!-- <VuexWithComposition /> -->
   <!-- <ReusabilityWithOptionsAPI /> -->
-  <ReusabilityWithCompositionAPI />
+  <!-- <ReusabilityWithCompositionAPI /> -->
 </template>
 
 <script>
-import ReusabilityWithCompositionAPI from './projects/reusabilityWithCompositionAPI/ReusabilityWithCompositionAPI.vue';
+// import ReusabilityWithCompositionAPI from './projects/reusabilityWithCompositionAPI/ReusabilityWithCompositionAPI.vue';
 // import ReusabilityWithOptionsAPI from './projects/reusabilityWithOptionsAPI/ReusabilityWithOptionsAPI.vue';
 // import VuexWithComposition from './projects/vuexWithComposition/VuexWithComposition.vue';
 // import RoutingWithComposition from './projects/routingWithComposition/RoutingWithComposition.vue';
 
-// import CompositionPrj01 from './projects/compositionPrj01/CompositionPrj01.vue';
+import CompositionPrj01 from './projects/compositionPrj01/CompositionPrj01.vue';
 
 // import BasicExpenseTracker from './projects/compositionBasic/BasicExpenseTracker.vue';
 // import CourseGoalsCompositionAPI from './projects/compositionBasic/CourseGoalsCompositionAPI.vue';
@@ -57,11 +57,11 @@ import ReusabilityWithCompositionAPI from './projects/reusabilityWithComposition
 
 export default {
   components: {
-    ReusabilityWithCompositionAPI,
+    // ReusabilityWithCompositionAPI,
     // ReusabilityWithOptionsAPI,
     // VuexWithComposition,
     // RoutingWithComposition,
-    // CompositionPrj01,
+    CompositionPrj01,
     // BasicExpenseTracker,
     // CourseGoalsCompositionAPI,
     // CourseGoalsOptionsAPI,
