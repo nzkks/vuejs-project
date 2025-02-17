@@ -17,11 +17,13 @@
   <!-- <CourseGoalsCompositionAPI /> -->
   <!-- <BasicExpenseTracker /> -->
   <!-- <CompositionPrj01 /> -->
-  <RoutingWithComposition />
+  <!-- <RoutingWithComposition /> -->
+  <VuexWithComposition />
 </template>
 
 <script>
-import RoutingWithComposition from './projects/routingWithComposition/RoutingWithComposition.vue';
+import VuexWithComposition from './projects/vuexWithComposition/VuexWithComposition.vue';
+// import RoutingWithComposition from './projects/routingWithComposition/RoutingWithComposition.vue';
 
 // import CompositionPrj01 from './projects/compositionPrj01/CompositionPrj01.vue';
 
@@ -51,7 +53,8 @@ import RoutingWithComposition from './projects/routingWithComposition/RoutingWit
 
 export default {
   components: {
-    RoutingWithComposition,
+    VuexWithComposition,
+    // RoutingWithComposition,
     // CompositionPrj01,
     // BasicExpenseTracker,
     // CourseGoalsCompositionAPI,
