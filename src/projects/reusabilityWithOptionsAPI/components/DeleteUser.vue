@@ -19,6 +19,7 @@ export default {
   data() {
     return {
       alertTitle: 'Delete User?',
+      alertIsVisible: true,
     };
   },
   mixins: [alertMixin],
