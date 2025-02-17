@@ -32,7 +32,7 @@ import BaseSearch from './components/ui/BaseSearch.vue';
 // import store from './projects/vueX/store/index.js';
 // import store from './projects/miniShop/store/index.js';
 
-import store from './projects/vuexWithComposition/store/index.js';
+// import store from './projects/vuexWithComposition/store/index.js';
 
 const app = createApp(App);
 
@@ -59,6 +59,6 @@ app.component('BaseDialogModal', BaseDialogModal);
 app.component('BaseSearch', BaseSearch);
 
 // app.use(router);
-app.use(store);
+// app.use(store);
 
 app.mount('#app');

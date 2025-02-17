@@ -18,11 +18,13 @@
   <!-- <BasicExpenseTracker /> -->
   <!-- <CompositionPrj01 /> -->
   <!-- <RoutingWithComposition /> -->
-  <VuexWithComposition />
+  <!-- <VuexWithComposition /> -->
+  <ReusabilityWithOptionsAPI />
 </template>
 
 <script>
-import VuexWithComposition from './projects/vuexWithComposition/VuexWithComposition.vue';
+import ReusabilityWithOptionsAPI from './projects/reusabilityWithOptionsAPI/ReusabilityWithOptionsAPI.vue';
+// import VuexWithComposition from './projects/vuexWithComposition/VuexWithComposition.vue';
 // import RoutingWithComposition from './projects/routingWithComposition/RoutingWithComposition.vue';
 
 // import CompositionPrj01 from './projects/compositionPrj01/CompositionPrj01.vue';
@@ -53,7 +55,8 @@ import VuexWithComposition from './projects/vuexWithComposition/VuexWithComposit
 
 export default {
   components: {
-    VuexWithComposition,
+    ReusabilityWithOptionsAPI,
+    // VuexWithComposition,
     // RoutingWithComposition,
     // CompositionPrj01,
     // BasicExpenseTracker,
