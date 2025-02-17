@@ -19,11 +19,13 @@
   <!-- <CompositionPrj01 /> -->
   <!-- <RoutingWithComposition /> -->
   <!-- <VuexWithComposition /> -->
-  <ReusabilityWithOptionsAPI />
+  <!-- <ReusabilityWithOptionsAPI /> -->
+  <ReusabilityWithCompositionAPI />
 </template>
 
 <script>
-import ReusabilityWithOptionsAPI from './projects/reusabilityWithOptionsAPI/ReusabilityWithOptionsAPI.vue';
+import ReusabilityWithCompositionAPI from './projects/reusabilityWithCompositionAPI/ReusabilityWithCompositionAPI.vue';
+// import ReusabilityWithOptionsAPI from './projects/reusabilityWithOptionsAPI/ReusabilityWithOptionsAPI.vue';
 // import VuexWithComposition from './projects/vuexWithComposition/VuexWithComposition.vue';
 // import RoutingWithComposition from './projects/routingWithComposition/RoutingWithComposition.vue';
 
@@ -55,7 +57,8 @@ import ReusabilityWithOptionsAPI from './projects/reusabilityWithOptionsAPI/Reus
 
 export default {
   components: {
-    ReusabilityWithOptionsAPI,
+    ReusabilityWithCompositionAPI,
+    // ReusabilityWithOptionsAPI,
     // VuexWithComposition,
     // RoutingWithComposition,
     // CompositionPrj01,

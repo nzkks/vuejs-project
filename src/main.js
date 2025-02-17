@@ -34,7 +34,7 @@ import BaseSearch from './components/ui/BaseSearch.vue';
 
 // import store from './projects/vuexWithComposition/store/index.js';
 
-import loggerMixin from './projects/reusabilityWithOptionsAPI/mixins/logger.js';
+// import loggerMixin from './projects/reusabilityWithOptionsAPI/mixins/logger.js';
 
 const app = createApp(App);
 
@@ -63,6 +63,6 @@ app.component('BaseSearch', BaseSearch);
 // app.use(router);
 // app.use(store);
 
-app.mixin(loggerMixin);
+// app.mixin(loggerMixin);
 
 app.mount('#app');
